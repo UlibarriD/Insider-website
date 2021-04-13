@@ -13,31 +13,28 @@
 
     </head>
     <body>
-        <div class="login-popup">
-            <form action="" class="login-form">
-                <i class="fas fa-user-ninja"></i>
-                <a href="/insider"><i class="far fa-times-circle" id="close"></i></a> 
-                <div class="form-group">
-                    <input type="email" class="form-control" id="nickName" placeholder="Nickname">
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-control" id="password" placeholder="Contraseña">
-                </div>
-                <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                </div>
 
-                <div class="login-end">
-                    <div class="no-account">
-                        <small id="emailHelp" class="form-text text-muted">¿No tienes cuenta?</small>
-                        <a href="/insider/nuevoJugador"><small id="emailHelp" class="form-text">Crear cuenta</small></a>
+        <i class="fas fa-user-ninja"></i>
+        <a href="/insider"><i class="far fa-times-circle" id="close"></i></a>
+
+        <section class="login">
+            <div class="login-container">
+                <div class="user signin">
+                    <div class="loginImg"></div>
+                    <div class="login-form">
+                        <form action="">
+
+                            <h2>Inicia Sesión</h2>
+                            <input type="text" class="" id="nickName" placeholder="Nickname">
+                            <input type="password" class="" id="password" placeholder="Contraseña">
+                            <input type="submit" name="" value="Inicia Sesión">
+                            <p class="signup">No tienes una cuenta ? <a href="#">Crea tu cuenta</a></p>
+                        </form>
                     </div>
-                    <button type="send" class="btn btn-primary">Iniciar sesión</button>
                 </div>
+            </div>
+        </section>
 
-            </form>
-        </div>
         
         <!-- Font awesome -->
         <script src="https://kit.fontawesome.com/d0fe208db5.js" crossorigin="anonymous"></script>

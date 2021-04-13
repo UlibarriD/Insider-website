@@ -18,6 +18,12 @@
 .team-info p
 {
     font-size: 20px;
+    color: #1D3557;
+}
+.team-info h2
+{
+    font-size: 40px;
+    color: #1D3557;
 }
 
 .team-cards
@@ -32,7 +38,7 @@
 .team-cards .member-card 
 {
     position: relative;
-    background: #000;
+    background: #457B9D;
     min-height: 300px;
     width: 250px;
     margin: 0 auto;
@@ -68,13 +74,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #000;
+    background: #457B9D;
     transition: 0.2s;
     opacity: 0;
 }
 .team-cards .member-card:hover .member-info
 {
-    opacity: 0.8;
+    opacity: 1;
     transition: 0.2s;
     cursor: pointer;
 }

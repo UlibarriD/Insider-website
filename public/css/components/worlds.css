@@ -6,11 +6,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #335c67;
+    background: #1D3557;
 }
 .world-section > h2
 {
     color: #fff;
+    font-size: 40px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,1);
 }
 
 .world-cards
@@ -81,6 +83,7 @@
 {
     font-weight: bolder;
     margin: 0;
+    color: #1D3557;
 }
 .world-cards .world-card .world-info p
 {
@@ -88,20 +91,21 @@
     font-weight: 700;
     margin: 0;
     padding: 20px;
+    color: #1D3557;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1200px) {
     .world-section{
         padding: 50px;
+    }
+    .world-cards .world-card
+    {
+        min-height: 300px;
     }
 
 }
 @media screen and (max-width: 600px) {
     .world-section{
         padding: 50px 0;
-    }
-    .world-cards .world-card
-    {
-        min-height: 300px;
     }
 }

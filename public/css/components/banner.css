@@ -21,9 +21,14 @@
     border-radius: 3px;
     transition: 0.5s;
 }
-.cards > h2
+.cards > h2 > a
 {
-    color: black;
+    color: #1D3557;
+}
+.cards > h2 > a:hover
+{
+    color: #457B9D;
+    text-decoration: none;
 }
 .cards:hover
 {
@@ -41,7 +46,7 @@
     display: none;
 }
 
-@media screen and (max-width: 1165px)
+@media screen and (max-width: 1200px)
 {
     #move-left
     {
