@@ -1,0 +1,69 @@
+.login-popup
+{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+.login-form
+{
+    position: relative;
+    width: 500px;
+    background: #fff;
+    padding: 40px;
+    border-radius: 5px;
+}
+.login-form i
+{
+    font-weight: 600;
+    font-size: 60px;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: center;
+    color: #000;
+}
+.login-form i#close
+{
+    font-size: 25px;
+    color: #000;
+    text-decoration: none;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+.login-form i#close:hover
+{
+    font-size: 25px;
+    color: red;
+    cursor: pointer;
+}
+
+.login-form .form-group label
+{
+    color: #000;
+    text-shadow: none;
+    font-weight: 700;
+}
+.login-form .login-end
+{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+}
+.login-form .login-end .no-account small
+{
+    font-weight: 600;
+    font-size: 14px;
+}
+
+@media screen and (max-width: 600px)
+{
+    .login-form
+    {
+        width: 330px;
+        padding: 20px;
+    }
+}

@@ -1,0 +1,33 @@
+/* Import Font */
+@import url('https://fonts.googleapis.com/css2?family=Gruppo&display=swap');
+
+/* Import Css Components */
+@import url('./components/form.css');
+@import url('./components/navbar.css');
+@import url('./components/banner.css');
+@import url('./components/about.css');
+@import url('./components/worlds.css');
+@import url('./components/team.css');
+@import url('./components/steamDatatest.css');
+@import url('./components/login.css');
+
+*
+{
+    font-family: 'Gruppo', cursive;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html
+{
+    scroll-behavior: smooth;
+}
+body
+{
+    background: #fff;
+    min-height: 100vh;
+}
+h1, h2, h3, li, p
+{
+    font-weight: 600;
+}

@@ -1,0 +1,105 @@
+.team-section
+{
+    min-height: 100vh;
+    background: #fff;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.team-info
+{
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+.team-info p
+{
+    font-size: 20px;
+}
+
+.team-cards
+{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 30px;
+    max-width: 100%;
+    margin-top: 40px;
+}
+.team-cards .member-card 
+{
+    position: relative;
+    background: #000;
+    min-height: 300px;
+    width: 250px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.8);
+}
+.team-cards .member-card .member-image
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.team-cards .member-card .member-image img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;    
+}
+.team-cards .member-card .member-info
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    transition: 0.2s;
+    opacity: 0;
+}
+.team-cards .member-card:hover .member-info
+{
+    opacity: 0.8;
+    transition: 0.2s;
+    cursor: pointer;
+}
+.team-cards .member-card .member-info h2
+{
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.team-cards .member-card .member-info h2 span
+{
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 600px)
+{
+    .team-section
+    {
+        padding: 30px;
+    }
+}

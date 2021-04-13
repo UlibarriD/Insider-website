@@ -1,0 +1,107 @@
+.world-section
+{
+    min-height: 100vh;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #335c67;
+}
+.world-section > h2
+{
+    color: #fff;
+}
+
+.world-cards
+{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 30px;
+    max-width: 100%;
+    margin-top: 40px;
+}
+.world-cards .world-card
+{
+    position: relative;
+    background-color: #fff;
+    width: 300px;
+    min-height: 600px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.world-cards .world-card .world-image
+{
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-size: cover;
+   background-position: center;
+   box-shadow: 0 0 15px rgba(255,255,255,0.6);
+
+}
+.world-cards .world-card .world-image h1
+{
+    font-size: 140px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0,0,0,1);
+}
+.world-cards .world-card .world-info
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+    opacity: 0;
+    background: #fff;
+}
+.world-cards .world-card:hover .world-info
+{
+    opacity: 1;
+    transition: 0.2;
+    cursor: pointer;
+}
+.world-cards .world-card .world-info h2
+{
+    font-weight: bolder;
+    margin: 0;
+}
+.world-cards .world-card .world-info p
+{
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+    padding: 20px;
+}
+
+@media screen and (max-width: 800px) {
+    .world-section{
+        padding: 50px;
+    }
+
+}
+@media screen and (max-width: 600px) {
+    .world-section{
+        padding: 50px 0;
+    }
+    .world-cards .world-card
+    {
+        min-height: 300px;
+    }
+}

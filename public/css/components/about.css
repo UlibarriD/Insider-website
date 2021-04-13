@@ -1,0 +1,33 @@
+.about-section
+{
+    padding: 100px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about-section h2
+{
+    font-weight: bolder;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+.about-section p
+{
+    position: relative;
+    font-size: 20px;
+}
+.about-section .about-content
+{
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+@media screen and (max-width: 600px)
+{
+    .about-section
+    {
+        padding: 30px;
+    }
+}
