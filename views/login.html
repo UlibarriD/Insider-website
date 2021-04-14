@@ -13,28 +13,115 @@
 
     </head>
     <body>
-
-        <i class="fas fa-user-ninja"></i>
-        <a href="/insider"><i class="far fa-times-circle" id="close"></i></a>
-
         <section class="login">
             <div class="login-container">
                 <div class="user signin">
-                    <div class="loginImg"></div>
+                    <div class="loginImg"> <img src="../images/BaseCharacter.png" alt=""></div>
                     <div class="login-form">
                         <form action="">
-
-                            <h2>Inicia Sesión</h2>
+                            <a href="/insider"><i class="far fa-times-circle" id="close"></i></a>
+                            <h2>Insider</h2>
+                            <h3>Iniciar Sesión</h3>
                             <input type="text" class="" id="nickName" placeholder="Nickname">
                             <input type="password" class="" id="password" placeholder="Contraseña">
                             <input type="submit" name="" value="Inicia Sesión">
-                            <p class="signup">No tienes una cuenta ? <a href="#">Crea tu cuenta</a></p>
+                            <p class="signup">Todavía tienes una cuenta? <a href="#">Crea tu cuenta</a></p>
                         </form>
                     </div>
                 </div>
+
+                <div class="user signup">
+                    <div class="login-form">
+                        <form action="NuevoJugador" method="POST">
+                            <a href="/insider"><i class="far fa-times-circle" id="close"></i></a>
+                            <h2>Insider</h2>
+                            <h3>Crea tu cuenta</h3>
+                            <!-- Name/lastName -->
+                            <input type="text" class="" name="name" id="name" placeholder="Nombre" required>
+                            <input type="text" class="" name="last_name" id="lastName" placeholder="Apellido" required>
+                            <!-- nickName -->
+                            <input type="text" class="" name="nickname" id="nickName" placeholder="Apodo" required>
+                            <!-- dateBirth/gender -->
+                            <div class="row">
+                                <div class="col">
+                                    <label for="dateBirth">Fecha Nacimiento</label>
+                                    <input type="date" class="" name="date_of_birth" id="dateBirth" required>
+                                </div>
+                                <div class="col">
+                                    <label for="gender">Genero</label>
+                                    <select name="gender" id="gender" class="">
+                                        <option selected>M</option>
+                                        <option>F</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- area/state-->
+                            <div class="row">
+                                <div class="col">
+                                    <label for="area">Area de Interes</label>
+                                    <select name="area" id="area" class="">
+                                        <option selected>Ciencia</option>
+                                        <option>Tecnología</option>
+                                        <option>Arte</option>
+                                        <option>Ingeniería</option>
+                                        <option>Matemáticas</option>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <label for="state">Estado</label>
+                                    <select name="state" id="state" class="">
+                                        <option selected>Estado de México</option>
+                                        <option>Ciudad de México</option>
+                                        <option>Hidalgo</option>
+                                        <option>Jalisco</option>
+                                        <option>Nuevo León</option>
+                                        <option>Queretaro</option>
+                                        <option>Baja California</option>
+                                        <option>Baja California Sur</option> 
+                                        <option>Colima</option>
+                                        <option>Jalisco</option>
+                                        <option>Aguascalientes</option>
+                                        <option>Coahuila</option>
+                                        <option>Oaxaca</option>
+                                        <option>Campeche</option>
+                                        <option>Chiapas</option>
+                                        <option>Chihuahua</option>
+                                        <option>Durango</option>
+                                        <option>Guanajuato</option>
+                                        <option>Guerrero</option>
+                                        <option>Michoacan</option>
+                                        <option>Morelos</option>
+                                        <option>Nayarit</option>
+                                        <option>Puebla</option>
+                                        <option>Quintana Roo</option>
+                                        <option>San Luis Potosí</option>
+                                        <option>Sinaloa</option>
+                                        <option>Sonora</option>
+                                        <option>Tabasco</option>
+                                        <option>Tamaulipas</option>
+                                        <option>Tlaxcala</option>
+                                        <option>Veracruz</option>
+                                        <option>Yucatan</option>
+                                        <option>Zacatecas</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- password/confimPassword-->
+                            <input type="password" class="" id="password" placeholder="Contraseña" required>
+                            <input name="password" type="password" class="" id="confirmPassword" placeholder="Confirmar Contraseña" required>
+                            <!-- page policies -->
+                            <div class="policies">
+                                <input name="page_policies" type="checkbox" class="form-check-input" id="pagePolicies" required>
+                                <p>Estoy de acuerdo con las politicas de uso</p>
+                            </div>
+                            <input type="submit" name="" value="Crear cuenta">
+                            <p class="signup">Ya tienes una cuenta? <a href="#">Inicia Sesión</a></p>
+                        </form>
+                    </div>
+                    <div class="loginImg right"> <img src="../images/BaseCharacter.png" alt=""></div>
+                </div>
             </div>
         </section>
-
         
         <!-- Font awesome -->
         <script src="https://kit.fontawesome.com/d0fe208db5.js" crossorigin="anonymous"></script>

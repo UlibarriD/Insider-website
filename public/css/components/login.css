@@ -1,3 +1,4 @@
+/* Singn in */
 section.login
 {
     position: relative;
@@ -11,8 +12,174 @@ section.login
 section.login .login-container
 {
     position: relative;
-    width: 800px;
-    height: 500px;
+    width: 1500px;
+    height: 800px;
     background: #fff;
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
 }
+section.login .login-container .user
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+}
+section.login .login-container .user .loginImg
+{
+    position: relative;
+    width: 60%;
+    background: #12243F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+}
+
+section.login .login-container .user .loginImg img
+{
+    position: absolute;
+}
+section.login .login-container .user .login-form
+{
+    position: relative;
+    width: 40%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 70px;
+    transition: 0.5s;
+}
+section.login .login-container .user .login-form form h2
+{
+    font-size: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    width: 100%;
+    margin-bottom: 20px;
+    color: #12243F;
+}
+section.login .login-container .user .login-form form h3
+{
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #12243F;
+}
+section.login .login-container .user .login-form form p
+{
+    letter-spacing: 1px;
+    color: #12243F;
+}
+section.login .login-container .user .login-form form input
+{
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    background: #f5f5f5;
+    color: #333;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    margin: 8px 0;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+section.login .login-container .user .login-form form #close
+{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 27px;
+    color: #12243F;
+}
+section.login .login-container .user .login-form form #close:hover
+{
+    color: #E63946;
+}
+section.login .login-container .user .login-form form input[type= "submit"]
+{
+    max-width: 100%;
+    background: #E63946;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: 0.5s;
+}
+section.login .login-container .user .login-form form input[type= "submit"]:hover
+{
+    background: #ce2b39;
+}
+section.login .login-container .user .login-form form .signup
+{
+    position: relative;
+    margin-top: 20px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: #555;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+section.login .login-container .user .login-form form .signup a
+{
+    text-decoration: none;
+    font-size: 13px;
+    color: #E63946;
+}
+/* Singn in */
+/* Singn up */
+section.login .login-container .user .login-form form label
+{
+    color: #12243F;
+    text-shadow: none;
+    margin: 0;
+}
+section.login .login-container .user .login-form form select
+{
+    position: relative;
+    width: 100%;
+    padding: 16px;
+    background: #f5f5f5;
+    color: #333;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    margin: 8px 0;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+section.login .login-container .user .login-form form .policies
+{
+    display: flex;
+}
+section.login .login-container .user .login-form form .policies input
+{
+    width: 20px;
+    margin-right: 10px;
+}
+section.login .login-container .user .login-form form .policies p
+{
+    margin: 0;
+    color: #555;
+    font-weight: 700;
+}
+section.login .login-container .user .right
+{
+    position: relative;
+    width: 60%;
+    background: #E63946;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+}
+/* Singn up */
