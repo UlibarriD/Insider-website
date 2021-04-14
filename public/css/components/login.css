@@ -91,7 +91,7 @@ section.login .login-container .user .login-form form input
     margin: 8px 0;
     font-size: 14px;
     letter-spacing: 1px;
-    font-weight: 300;
+    font-weight: 700;
 }
 section.login .login-container .user .login-form form #close
 {
@@ -156,7 +156,11 @@ section.login .login-container .user .login-form form select
     box-shadow: none;
     margin: 8px 0;
     letter-spacing: 1px;
-    font-weight: 300;
+    font-weight: 700;
+}
+section.login .login-container .user .login-form form select option
+{
+    font-weight: 700;
 }
 section.login .login-container .user .login-form form .policies
 {
@@ -175,13 +179,7 @@ section.login .login-container .user .login-form form .policies p
 }
 section.login .login-container .user .right
 {
-    position: relative;
-    width: 60%;
     background: #E63946;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.5s;
 }
 section.login .login-container .user .right #close
 {
@@ -239,4 +237,88 @@ section.login .login-container .signin .right
 section.login .login-container.form-active .signin .right
 {
     left: -100%;
+}
+
+section.login .login-container .user .login-form form #close-phone
+{
+    display: none;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 1149px) 
+{
+    section.login .login-container
+    {
+        max-width: 900px;
+    }
+    section.login .login-container .user .loginImg
+    {
+        width: 30%; 
+    }
+    section.login .login-container .user .loginImg img
+    {
+        width: 250px;
+    }
+    section.login .login-container .user .login-form
+    {
+        width: 70%;
+    }
+
+}
+@media screen and (max-width: 900px) 
+{
+    section.login .login-container
+    {
+        max-width: 900px;
+    }
+    section.login .login-container .user .loginImg
+    {
+        display: none; 
+    }
+    section.login .login-container .user .login-form
+    {
+        width: 100%;
+    }
+    section.login .login-container .user .login-form form #close-phone
+    {
+        display: inline;
+        color: #12243F;
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        font-size: 27px;
+    }
+}
+@media screen and (max-width: 500px)
+{
+    section.login .login-container
+    {
+        max-height: 700px;
+    }
+    section.login .login-container .user .login-form
+    {
+        padding: 20px;
+    }
+    section.login .login-container .user .login-form form h2
+    {
+        font-size: 30px;
+    }
+    section.login .login-container .user .login-form form h3
+    {
+        font-size: 14px;
+    }
+    section.login .login-container .user .login-form form .policies p, 
+    section.login .login-container .user .login-form form .login_signup
+    {
+        font-size: 12px;
+        margin: 0;
+    }
+    section.login .login-container .user .login-form form input
+    {
+        padding: 7px;
+    }
+    section.login .login-container .user .login-form form select
+    {
+        padding: 9px;
+    }
 }
