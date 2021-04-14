@@ -119,7 +119,7 @@ section.login .login-container .user .login-form form input[type= "submit"]:hove
 {
     background: #ce2b39;
 }
-section.login .login-container .user .login-form form .signup
+section.login .login-container .user .login-form form .login_signup
 {
     position: relative;
     margin-top: 20px;
@@ -129,11 +129,12 @@ section.login .login-container .user .login-form form .signup
     text-transform: uppercase;
     font-weight: 700;
 }
-section.login .login-container .user .login-form form .signup a
+section.login .login-container .user .login-form form .login_signup a
 {
     text-decoration: none;
     font-size: 13px;
     color: #E63946;
+    cursor: pointer;
 }
 /* Singn in */
 /* Singn up */
@@ -195,3 +196,47 @@ section.login .login-container .user .right #close:hover
     color: #A8DADC;
 }
 /* Singn up */
+
+/* Signin Active or Signup Active*/
+section.login .login-container .signup
+{
+    pointer-events: none;
+}
+section.login .login-container.form-active .signup
+{
+    pointer-events: initial;
+}
+
+section.login .login-container .signup .login-form
+{
+    left: 100%;
+}
+section.login .login-container.form-active .signup .login-form
+{
+    left: 0;
+}
+section.login .login-container .signup .right
+{
+    left: -100%;
+}
+section.login .login-container.form-active .signup .right
+{
+    left: 0;
+}
+/* signin */
+section.login .login-container .signin .login-form
+{
+    left: 0;
+}
+section.login .login-container.form-active .signin .login-form
+{
+    left: 100%;
+}
+section.login .login-container .signin .right
+{
+    left: 0;
+}
+section.login .login-container.form-active .signin .right
+{
+    left: -100%;
+}

@@ -25,7 +25,7 @@
                             <input type="text" class="" id="nickName" placeholder="Nickname">
                             <input type="password" class="" id="password" placeholder="Contraseña">
                             <input type="submit" name="" value="Inicia Sesión">
-                            <p class="signup">Todavía tienes una cuenta? <a href="#">Crea tu cuenta</a></p>
+                            <p class="login_signup">Todavía tienes una cuenta? <a href="#" onclick="toggleForm();">Crea tu cuenta</a></p>
                         </form>
                     </div>
                 </div>
@@ -114,7 +114,7 @@
                                 <p>Estoy de acuerdo con las politicas de uso</p>
                             </div>
                             <input type="submit" name="" value="Crear cuenta">
-                            <p class="signup">Ya tienes una cuenta? <a href="#">Inicia Sesión</a></p>
+                            <p class="login_signup">Ya tienes una cuenta? <a href="#" onclick="toggleForm();">Inicia Sesión</a></p>
                         </form>
                     </div>
                     <div class="loginImg right">
@@ -125,6 +125,8 @@
             </div>
         </section>
         
+        <!-- Import personal js -->
+        <script src="../js/login.js"></script>
         <!-- Font awesome -->
         <script src="https://kit.fontawesome.com/d0fe208db5.js" crossorigin="anonymous"></script>
         <!-- Bootstrap JS -->
