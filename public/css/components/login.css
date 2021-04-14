@@ -182,4 +182,16 @@ section.login .login-container .user .right
     justify-content: center;
     transition: 0.5s;
 }
+section.login .login-container .user .right #close
+{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 27px;
+    color: #fff;
+}
+section.login .login-container .user .right #close:hover
+{
+    color: #A8DADC;
+}
 /* Singn up */
