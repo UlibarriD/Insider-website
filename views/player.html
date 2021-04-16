@@ -35,12 +35,11 @@
         </section>
         <!-- Stats/Config-->
         <section class="player container">
+            <nav class="player-nav">
+                <h3 class="nav n-active">Editar perfil</h3>
+                <h3 class="nav">Stats</h3>
+            </nav>
             <% players.forEach(player => { %>
-                <nav class="player-nav">
-                    <h3 class="nav n-active">Editar perfil</h3>
-                    <h3 class="nav">Stats</h3>
-                </nav>
-
                 <div class="config active">
                     <h3>Nombre: <%= player.name %></h3>
                     <h3>Apellido: <%= player.last_name %></h3>
