@@ -9,20 +9,21 @@
     display: flex;
     justify-content: space-around;
 }
-.player .player-nav h3
+.player .player-nav .nav
 {
     font-size: 24px;
     cursor: pointer;
     color: #1D3557;
 }
-.player .player-nav h3.n-active
+.player .player-nav .n-active
 {
     color: #457B9D;
     border-bottom: 2px solid #457B9D;
 }
-
+/* config */
 .player .config
 {
+    display: none;
     padding: 16px;
     border: 2px solid gray;
     border-radius: 4px;
@@ -31,4 +32,13 @@
 .player .config h3
 {
     font-size: 21px;
+}
+/* Stats */
+.player .stats
+{
+    display: none;
+}
+.player .active
+{
+    display: block;
 }

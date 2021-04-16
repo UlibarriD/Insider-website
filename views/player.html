@@ -37,11 +37,11 @@
         <section class="player container">
             <% players.forEach(player => { %>
             <nav class="player-nav">
-                <h3 class="n-active">Editar perfil</h3>
-                <h3>Stats</h3>
+                <h3 class="nav n-active">Editar perfil</h3>
+                <h3 class="nav">Stats</h3>
             </nav>
 
-            <div class="config">
+            <div class="config active">
                 <h3>Nombre: <%= player.name %></h3>
                 <h3>Apellido: <%= player.last_name %></h3>
                 <h3>Nickname: <%= player.nickname %></h3>
@@ -59,6 +59,7 @@
 
         <!-- Js -->
         <script src="../js/navbar.js"></script>
+        <script src="../js/player.js"></script>
         <!-- Font awesome -->
         <script src="https://kit.fontawesome.com/d0fe208db5.js" crossorigin="anonymous"></script>
         <!-- Bootstrap JS -->
