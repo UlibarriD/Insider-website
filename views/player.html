@@ -36,20 +36,20 @@
         <!-- Stats/Config-->
         <section class="player container">
             <% players.forEach(player => { %>
-            <nav class="player-nav">
-                <h3 class="nav n-active">Editar perfil</h3>
-                <h3 class="nav">Stats</h3>
-            </nav>
+                <nav class="player-nav">
+                    <h3 class="nav n-active">Editar perfil</h3>
+                    <h3 class="nav">Stats</h3>
+                </nav>
 
-            <div class="config active">
-                <h3>Nombre: <%= player.name %></h3>
-                <h3>Apellido: <%= player.last_name %></h3>
-                <h3>Nickname: <%= player.nickname %></h3>
-                <h3>Fecha de nacimiento: <%= player.date_of_birth %></h3>
-                <h3>Género: <%= player.gender %></h3>
-                <h3>Estado: <%= player.state %></h3>
-                <h3>Contraseña: <%= player.password %></h3>
-            </div>
+                <div class="config active">
+                    <h3>Nombre: <%= player.name %></h3>
+                    <h3>Apellido: <%= player.last_name %></h3>
+                    <h3>Nickname: <%= player.nickname %></h3>
+                    <h3>Fecha de nacimiento: <%= player.date_of_birth %></h3>
+                    <h3>Género: <%= player.gender %></h3>
+                    <h3>Estado: <%= player.state %></h3>
+                    <h3>Contraseña: <%= player.password %></h3>
+                </div>
             <% }) %>
 
             <div class="stats">
