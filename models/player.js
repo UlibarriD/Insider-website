@@ -8,15 +8,21 @@ const Player = sequelize.define('players', {
     nickname: {
         type: Sequelize.STRING,
         primaryKey: true,
-        allowNull: false
+        allowNull: false,
     },
     name: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
+        validate: {
+            is: /^[a-z]+$/i 
+        }
     },
     last_name: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
+        validate: {
+            is: /^[a-z]+$/i 
+        }
     },
     date_of_birth: {
         type: Sequelize.DATEONLY,
@@ -24,11 +30,10 @@ const Player = sequelize.define('players', {
     },
     gender: {
         type: Sequelize.STRING(1),
-        allowNull: false
-    },
-    area:{
-        type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
+        validate: {
+            isIn: [['M', 'F', 'm', 'f']],
+        }
     },
     state:{
         type: Sequelize.STRING,
@@ -36,12 +41,17 @@ const Player = sequelize.define('players', {
     },
     password:{
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
     },
     page_policies:{
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(3),
         allowNull: false
-    }
+    },
+    steam: {
+        type: Sequelize.STRING(3),
+        defaultValue: "off",
+        allowNull: false
+    } 
 });
 
 module.exports = Player;

@@ -1,3 +1,35 @@
+/* Player banner */
+.banner-player
+{
+    position: relative;
+    width: 100%;
+    min-height: 70vh;
+    background: #E63946;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.banner-player .container h1
+{
+    color: #fff;
+    margin-bottom: 8px;
+}
+.banner-player .container a
+{
+    background: #457B9D;
+    padding: 16px 40px;
+    text-transform: uppercase;
+    font-size: 18px;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 4px;
+}
+.banner-player .container a:hover
+{
+    background: #376c8d;
+    text-decoration: none;
+}
+/* Landingpage banner */
 .banner
 {
     position: relative;

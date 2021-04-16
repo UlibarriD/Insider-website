@@ -17,11 +17,9 @@
         <div class="container steamData">
             <a href="/insider" class="btn btn-success">Return</a>
 
-            <h1><%= fecha %></h1>
-            <h2><%= sesion %></h2>
-
             <% players.forEach(player => { %>
                 <li> Apodo: <%= player.nickname %> Nombre: <%= player.nombre %> Apellido: <%= player.last_name %> Fecha de nacimiento: <%= player.date_of_birth %></li>
+                <li>Genero: <%= player.gender %> estado: <%= player.state %> contraseña: <%= player.password %> condiciones: <%= player.page_policies %> </li>
             <% }) %>
         </div>
 

@@ -1,0 +1,34 @@
+.player
+{
+    min-height: 80vh;
+}
+.player .player-nav
+{
+    margin: 64px 0;
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+}
+.player .player-nav h3
+{
+    font-size: 24px;
+    cursor: pointer;
+    color: #1D3557;
+}
+.player .player-nav h3.n-active
+{
+    color: #457B9D;
+    border-bottom: 2px solid #457B9D;
+}
+
+.player .config
+{
+    padding: 16px;
+    border: 2px solid gray;
+    border-radius: 4px;
+    width: 500px;
+}
+.player .config h3
+{
+    font-size: 21px;
+}
