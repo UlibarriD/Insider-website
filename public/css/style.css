@@ -7,7 +7,7 @@
 @import url('./components/about.css');
 @import url('./components/worlds.css');
 @import url('./components/team.css');
-@import url('./components/steamDatatest.css');
+@import url('./components/steamdata.css');
 @import url('./components/login.css');
 @import url('./components/player.css');
 
@@ -26,6 +26,7 @@ body
 {
     background: #fff;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 h1, h2, h3, li, p
 {
