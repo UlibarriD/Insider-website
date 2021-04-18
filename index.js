@@ -6,8 +6,6 @@ const bodyParser = require('body-parser');
 const express = require('express');
 // Import Sequelize from util
 const sequelize = require("./util/database.js");
-//Import models
-const Player = require("./models/player.js");
 //Import routes
 const playerRoutes = require("./routes/player.js")
 // Create Server
@@ -19,10 +17,9 @@ app.use(bodyParser.urlencoded({extended:true}));
 // EJS template configuration
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs');
+
 // Server configuration
 app.use('/insider', playerRoutes);
-
-// GET
 app.get('/insider', (req, res) => {
     res.render('LandingPage.html')
 });

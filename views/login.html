@@ -18,12 +18,12 @@
                 <div class="user signin">
                     <div class="loginImg"> <img src="../images/BaseCharacter.png" alt=""></div>
                     <div class="login-form">
-                        <form action="">
+                        <form action="IniciarSesion" method="POST">
                             <a href="/insider"><i class="far fa-times-circle" id="close"></i></a>
                             <h2>Insider</h2>
                             <h3>Iniciar Sesión</h3>
-                            <input type="text" class="" id="nickName" placeholder="Nickname">
-                            <input type="password" class="" id="password" placeholder="Contraseña">
+                            <input type="text" name="nickname" placeholder="Nickname">
+                            <input type="password" name ="password" placeholder="Contraseña">
                             <input type="submit" name="" value="Inicia Sesión">
                             <p class="login_signup">Todavía tienes una cuenta? <a href="#" onclick="toggleForm();">Crea tu cuenta</a></p>
                         </form>
@@ -37,26 +37,26 @@
                             <h2>Insider</h2>
                             <h3>Crea tu cuenta</h3>
                             <!-- Name/lastName -->
-                            <input type="text" class="" name="name" id="name" placeholder="Nombre" required>
-                            <input type="text" class="" name="last_name" id="lastName" placeholder="Apellido" required>
+                            <input type="text" name="name" id="name" placeholder="Nombre" required>
+                            <input type="text" name="last_name" id="lastName" placeholder="Apellido" required>
                             <!-- nickName -->
-                            <input type="text" class="" name="nickname" id="nickName" placeholder="Apodo" required>
+                            <input type="text" name="nickname" id="nickName" placeholder="Apodo" required>
                             <!-- dateBirth -->
                             <label for="dateBirth">Fecha Nacimiento</label>
-                            <input type="date" class="" name="date_of_birth" id="dateBirth" required>
+                            <input type="date" name="date_of_birth" id="dateBirth" required>
 
                             <!-- gender/state-->
                             <div class="row">
                                 <div class="col">
                                     <label for="gender">Genero</label>
-                                    <select name="gender" id="gender" class="">
+                                    <select name="gender" id="gender">
                                         <option selected>M</option>
                                         <option>F</option>
                                     </select>
                                 </div>
                                 <div class="col">
                                     <label for="state">Estado</label>
-                                    <select name="state" id="state" class="">
+                                    <select name="state" id="state">
                                         <option selected>Estado de México</option>
                                         <option>Ciudad de México</option>
                                         <option>Hidalgo</option>
@@ -94,8 +94,8 @@
                                 </div>
                             </div>
                             <!-- password/confimPassword-->
-                            <input type="password" class="" id="password" placeholder="Contraseña" required>
-                            <input name="password" type="password" class="" id="confirmPassword" placeholder="Confirmar Contraseña" required>
+                            <input type="password" id="password" placeholder="Contraseña" required>
+                            <input name="password" type="password" id="confirmPassword" placeholder="Confirmar Contraseña" required>
                             <!-- page policies -->
                             <div class="policies">
                                 <input name="page_policies" type="checkbox" class="form-check-input" id="pagePolicies" required>

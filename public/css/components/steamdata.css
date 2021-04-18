@@ -115,7 +115,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 40px;
+    font-size: 48px;
 }
-
+.main .data
+{
+    margin-top: 40px;
+    width: 90%;
+    height: 600px;
+    background: #fff;
+}
 
