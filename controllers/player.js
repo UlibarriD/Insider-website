@@ -3,23 +3,75 @@ const Player = require("../util/database").models.player;
 
 // CREATE
 exports.postNuevoJugador = (req, res) => {
-    console.log(req.body);
-    // Add records to DB
-    Player.create(req.body)
-        .then(result => console.log("Registro exitoso"))
-        .catch(error => console.log(error))
+    const {name, last_name, nickname, date_of_birth, gender, state, password ,password2, page_policies} = req.body;
+    let errors = [];
+    // Check all the fields are filled
+    if(!name || !last_name || !nickname || !date_of_birth || !gender || !state || !password || !password2 || !page_policies) {
+        errors.push({msg : "Porfavor llena todos los espacios. "})
+    }
+    // Chech if the passwords match
+    if(password !== password2) {
+        errors.push({msg : "Las contraseñas no coinciden. "});
+    }
+    // Check password length is greather than 6
+    if(password.length < 6 ) {
+        errors.push({msg : 'La contraseña debe tener al menos 6 caracteres. '})
+    }
 
-    res.redirect('/insider/jugador');
+    if(errors.length > 0) {
+        res.render('login.html', {
+            estados: ["Estado de México", "Ciudad de México", "Hidalgo", "Nuevo León", 
+            "Queretaro", "Baja California", "Baja California Sur", "Colima", "Jalisco", 
+            "Coahuila", "Oaxaca", "Campeche", "Chiapas", "Chihuahua", "Duarngo", "Guanajuato", "Guerrero", 
+            "Michoacan", "Morelos", "Nayarit", "Puebla", "Quintana Roo", "San Luis Potosi", "Sinaloa",
+            "Sonora", "Tabasco", "Tamaulipas", "Tlaxcala", "Veracruz", "Yucatan", "Zacatecas"].sort(),
+            errors : errors,
+        })
+    } else {
+        //validation passed
+        Player.findOne({
+            where: {
+                nickname : nickname,
+            }
+        })
+        .then(player => {
+            console.log(player);
+            if(player) {
+                console.log("Ese usuario ya existe")
+                errors.push({msg: 'Ese nickname ya existe'});
+                render(res,errors);
+            } else {
+                // Add records to DB
+                const newPlayer = Player.create(req.body)
+                    .then(result => {
+                        console.log("Registro exitoso");
+                        res.redirect('/insider/jugador');
+                        })
+                    .catch(error => console.log(error))
+            }
+        })
+        .catch(error => {
+            console.log(error);
+        })
+    }
 };
+
 // READ
 exports.getJugador = (req, res) =>{
+    console.log(req.player);
     res.render('player.html', {
         player: ""
     })
 };
 
 exports.getIniciarSesion = (req, res)=>{
-    res.render('login.html');
+    res.render('login.html', {
+        estados: ["Estado de México", "Ciudad de México", "Hidalgo", "Nuevo León", 
+        "Queretaro", "Baja California", "Baja California Sur", "Colima", "Jalisco", 
+        "Coahuila", "Oaxaca", "Campeche", "Chiapas", "Chihuahua", "Duarngo", "Guanajuato", "Guerrero", 
+        "Michoacan", "Morelos", "Nayarit", "Puebla", "Quintana Roo", "San Luis Potosi", "Sinaloa",
+        "Sonora", "Tabasco", "Tamaulipas", "Tlaxcala", "Veracruz", "Yucatan", "Zacatecas"].sort()
+    });
 };
 
 exports.postIniciarSesion = (req, res) =>{
@@ -29,12 +81,14 @@ exports.postIniciarSesion = (req, res) =>{
             password:req.body.password
         } 
     })
-    .then(player =>{
-        if(!player){
+    .then(user =>{
+        if(!user){
             res.status(404).json({msg: "Usuario no encontrado"})
         } else {
-            console.log(player.dataValues);
-            res.redirect('/insider/jugador');
+            console.log(user.dataValues);
+            res.render('player.html'), {
+                player: user.dataValues
+            };
         }
     })
     .catch(error => {

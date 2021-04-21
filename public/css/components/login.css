@@ -243,6 +243,11 @@ section.login .login-container .user .login-form form #close-phone
 {
     display: none;
 }
+/* Errors messages */
+.close i
+{
+    font-size: 18px;
+}
 
 /* Responsiveness */
 @media screen and (max-width: 1149px) 
@@ -293,7 +298,7 @@ section.login .login-container .user .login-form form #close-phone
 {
     section.login .login-container
     {
-        max-height: 700px;
+        height: 770px;
     }
     section.login .login-container .user .login-form
     {

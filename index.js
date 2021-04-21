@@ -4,6 +4,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 // Import express library
 const express = require('express');
+
 // Import Sequelize from util
 const sequelize = require("./util/database.js");
 //Import routes
