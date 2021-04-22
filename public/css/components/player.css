@@ -1,13 +1,13 @@
 .player
 {
-    min-height: 80vh;
+    min-height: 85vh;
 }
 .player .player-nav
 {
     margin: 64px 0;
-    width: 300px;
+    width: 500px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 .player .player-nav .nav
 {
@@ -38,6 +38,14 @@
 {
     display: none;
 }
+
+/* History */
+.player .history
+{
+    display: none;
+}
+
+
 .player .active
 {
     display: block;

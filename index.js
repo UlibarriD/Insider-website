@@ -24,6 +24,9 @@ app.use('/insider', playerRoutes);
 app.get('/insider', (req, res) => {
     res.render('LandingPage.html')
 });
+app.get('/insider/tutoriales', (req, res) => {
+    res.render('tutorials.html')
+});
 
 // Attend requests
 sequelize.sync()

@@ -10,6 +10,8 @@
 @import url('./components/steamdata.css');
 @import url('./components/login.css');
 @import url('./components/player.css');
+@import url('./components/tutorials.css');
+@import url('./components/footer.css');
 
 *
 {

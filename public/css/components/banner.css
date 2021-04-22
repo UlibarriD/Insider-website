@@ -45,6 +45,10 @@
 .cards
 {
     background-color: #fff;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0 0 15px rgba(255,255,255,0.6);
     width: 400px;
     height: 600px;
     display: flex;
@@ -55,11 +59,13 @@
 }
 .cards > h2 > a
 {
-    color: #1D3557;
+    color: #fff;
+    font-size: 45px;
+    text-shadow: 1px 1px 15px rgba(0,0,0,1);
 }
 .cards > h2 > a:hover
 {
-    color: #457B9D;
+    color: #A8DADC;
     text-decoration: none;
 }
 .cards:hover
