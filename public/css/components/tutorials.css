@@ -2,16 +2,17 @@
 {
     position: relative;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 24px 0;
 }
 .tutorial-container
 {
     position: relative;
     width: 85%;
-    height: 850px;
+    min-height: 850px;
     box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
     padding: 40px;
 }
@@ -32,14 +33,104 @@
     padding: 48px;
     display: flex;
     justify-content: center;
-    height: 100%;
+    min-height: 100%;
 }
 .tab-content > .active
 {
     display: flex;
 }
-.tab-content > .active iframe
+.tab-content > .tab-pane iframe
 {
     flex: 0 0 50%;
     align-self: center;
+    height: 400px;
+}
+.nav-tabs
+{
+    border-bottom: none;
+    padding: 0 48px;
+}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active 
+{
+    border-color: #fff;
+    color: #457B9D;
+    border-bottom: 2px solid #457B9D;
+}
+.nav-tabs .nav-link
+{
+    font-size: 24px;
+    font-weight: 700;
+    color: #1D3557;
+    padding: 0;
+    margin-right: 16px;
+}
+.nav-tabs .nav-link:hover
+{
+    border-color: #fff;
+    color: #457B9D;
+}
+
+
+/* breakout responsive */
+@media screen and (max-width: 1500px) 
+{
+    .tab-content > .tab-pane iframe
+    {
+        flex: 0 0 50%;
+        height: 310px;  
+    }
+}
+
+@media screen and (max-width: 1200px) 
+{
+    .tab-content > .active
+    {
+        flex-direction: column;
+    } 
+    .tab-content > .tab-pane iframe
+    {
+        flex: none;
+    }
+}
+@media screen and (max-width: 900px)
+{
+    .tutorial-container .world
+    {
+        padding: 0 0 32px 0;
+    }
+    .nav-tabs
+    {
+        overflow-x: auto;
+        padding: 32px 0;
+    }
+    .nav
+    {
+        flex-wrap: nowrap;
+    }
+    .nav::-webkit-scrollbar
+    {
+        width: 0;
+    }
+} 
+
+@media screen and (max-width: 800px)
+{
+    .tab-content > .tab-pane iframe
+    {
+        width: 400px;
+        height: 250px;
+    }
+}
+@media screen and (max-width: 600px)
+{
+    .tab-content > .tab-pane iframe
+    {
+        width: 282px;
+        height: 170px;
+    } 
+    .tutorial-container
+    {
+        min-height: 500px;
+        padding: 16px;
+    }
 }

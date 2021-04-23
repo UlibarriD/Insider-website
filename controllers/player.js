@@ -58,10 +58,18 @@ exports.postNuevoJugador = (req, res) => {
 
 // READ
 exports.getJugador = (req, res) =>{
-    console.log(req.player);
-    res.render('player.html', {
-        player: ""
+    console.log(req.query);
+    Player.findOne({
+        where: {
+			nickname:req.query.nickname,
+        } 
     })
+    .then(user => {
+        res.render('player.html', {
+            player: user
+        })
+    })
+    .catch(error => console.log(error))
 };
 
 exports.getIniciarSesion = (req, res)=>{
@@ -86,9 +94,7 @@ exports.postIniciarSesion = (req, res) =>{
             res.status(404).json({msg: "Usuario no encontrado"})
         } else {
             console.log(user.dataValues);
-            res.render('player.html'), {
-                player: user.dataValues
-            };
+            res.redirect("/insider/jugador?nickname=" + user.dataValues.nickname);
         }
     })
     .catch(error => {
