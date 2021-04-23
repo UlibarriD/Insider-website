@@ -59,5 +59,17 @@
         width: 341px;
         margin: 0;
     }
+    .player .player-nav
+    {
+        width: 340px;
+    }
+    .player .player-nav .nav
+    {
+        margin-right: 16px;
+    }
+    .player .player-nav::-webkit-scrollbar
+    {
+        width: 0;
+    }
 }
 
