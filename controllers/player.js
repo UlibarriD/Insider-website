@@ -1,5 +1,8 @@
-//Import models
+// Import models and bcrypt
 const Player = require("../util/database").models.player;
+const bcrypt = require('bcrypt');
+const passport = require('passport');
+const flash = require('connect-flash');
 
 // CREATE
 exports.postNuevoJugador = (req, res) => {
@@ -17,7 +20,6 @@ exports.postNuevoJugador = (req, res) => {
     if(password.length < 6 ) {
         errors.push({msg : 'La contraseña debe tener al menos 6 caracteres. '})
     }
-
     if(errors.length > 0) {
         res.render('login.html', {
             estados: ["Estado de México", "Ciudad de México", "Hidalgo", "Nuevo León", 
@@ -39,15 +41,36 @@ exports.postNuevoJugador = (req, res) => {
             if(player) {
                 console.log("Ese usuario ya existe")
                 errors.push({msg: 'Ese nickname ya existe'});
-                render(res,errors);
+                res.render('login.html', {
+                    estados: ["Estado de México", "Ciudad de México", "Hidalgo", "Nuevo León", 
+                    "Queretaro", "Baja California", "Baja California Sur", "Colima", "Jalisco", 
+                    "Coahuila", "Oaxaca", "Campeche", "Chiapas", "Chihuahua", "Duarngo", "Guanajuato", "Guerrero", 
+                    "Michoacan", "Morelos", "Nayarit", "Puebla", "Quintana Roo", "San Luis Potosi", "Sinaloa",
+                    "Sonora", "Tabasco", "Tamaulipas", "Tlaxcala", "Veracruz", "Yucatan", "Zacatecas"].sort(),
+                     errors : errors,   
+                });
             } else {
-                // Add records to DB
-                const newPlayer = Player.create(req.body)
-                    .then(result => {
-                        console.log("Registro exitoso");
-                        res.redirect('/insider/jugador');
-                        })
-                    .catch(error => console.log(error))
+                const newPlayer = new Player({
+                    name: req.body.name,
+                    last_name: req.body.last_name,
+                    nickname: req.body.nickname,
+                    date_of_birth: req.body.date_of_birth,
+                    gender: req.body.gender,
+                    state: req.body.state,
+                    password: req.body.password,
+                    page_policies: req.body.page_policies
+                })
+                // hash password
+                bcrypt.genSalt(10,(err,salt) => bcrypt.hash(newPlayer.password,salt, (err,hash)=> {
+                    if(err) throw err;
+                        newPlayer.password = hash;
+                    newPlayer.save()
+                    .then((value)=>{
+                        console.log(value)
+                        res.redirect('/insider/iniciarSesion');
+                    })
+                    .catch(value=> console.log(value));
+                }));
             }
         })
         .catch(error => {
@@ -58,18 +81,9 @@ exports.postNuevoJugador = (req, res) => {
 
 // READ
 exports.getJugador = (req, res) =>{
-    console.log(req.query);
-    Player.findOne({
-        where: {
-			nickname:req.query.nickname,
-        } 
+    res.render('player.html', {
+        player: req.user
     })
-    .then(user => {
-        res.render('player.html', {
-            player: user
-        })
-    })
-    .catch(error => console.log(error))
 };
 
 exports.getIniciarSesion = (req, res)=>{
@@ -82,41 +96,11 @@ exports.getIniciarSesion = (req, res)=>{
     });
 };
 
-exports.postIniciarSesion = (req, res) =>{
-    Player.findOne({
-        where: {
-			nickname:req.body.nickname,
-            password:req.body.password
-        } 
-    })
-    .then(user =>{
-        if(!user){
-            res.status(404).json({msg: "Usuario no encontrado"})
-        } else {
-            console.log(user.dataValues);
-            res.redirect("/insider/jugador?nickname=" + user.dataValues.nickname);
-        }
-    })
-    .catch(error => {
-        console.log(error);
-    })
-}
+exports.postIniciarSesion = passport.authenticate('local', {
+    successRedirect: '/insider/jugador',
+    failureRedirect: '/insider/iniciarSesion',
+});
 
 exports.getDatosJugador = (req,res) => {
-    Player.findAll()
-        .then(players => {
-            var player_data = [];
-            players.forEach(player => {
-                player_data.push(player.dataValues);
-            })
-            console.log(player_data);
-
-            res.render('steamdata.html', {
-                players: player_data,
-            });
-        })
-        .catch(error => console.log(error))
-};
-// UPDATE
-
-//DELETE
+    res.render('steamdata.html')
+}

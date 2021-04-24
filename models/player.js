@@ -1,5 +1,6 @@
 // Import Sequelize
 const Sequelize = require('sequelize');
+const bcrypt = require('bcrypt');
 
 const Player = (sequelize => {
     sequelize.define('player', {
@@ -50,6 +51,15 @@ const Player = (sequelize => {
             type: Sequelize.STRING(3),
             defaultValue: "off",
             allowNull: false
+        }        
+    }, {
+        instanceMethods: {
+            generateHash: function (password) {
+              return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null)
+            },
+            validPassword: function (password) {
+              return bcrypt.compareSync(password, this.password)
+            }
         }        
     })
 });
