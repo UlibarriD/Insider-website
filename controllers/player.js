@@ -95,12 +95,15 @@ exports.getIniciarSesion = (req, res)=>{
         "Sonora", "Tabasco", "Tamaulipas", "Tlaxcala", "Veracruz", "Yucatan", "Zacatecas"].sort()
     });
 };
-
 exports.postIniciarSesion = passport.authenticate('local', {
     successRedirect: '/insider/jugador',
     failureRedirect: '/insider/iniciarSesion',
 });
+exports.getLogOut = (req, res) => {
+    req.logOut();
+    res.redirect('/insider');
+};
 
 exports.getDatosJugador = (req,res) => {
     res.render('steamdata.html')
-}
+};
