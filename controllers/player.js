@@ -5,7 +5,7 @@ const passport = require('passport');
 const flash = require('connect-flash');
 
 // CREATE
-exports.postNuevoJugador = (req, res) => {
+exports.postSignUp = (req, res) => {
     const {name, last_name, nickname, date_of_birth, gender, state, password ,password2, page_policies} = req.body;
     let errors = [];
     // Check all the fields are filled
@@ -80,13 +80,13 @@ exports.postNuevoJugador = (req, res) => {
 };
 
 // READ
-exports.getJugador = (req, res) =>{
+exports.getPlayer = (req, res) =>{
     res.render('player.html', {
         player: req.user
     })
 };
 
-exports.getIniciarSesion = (req, res)=>{
+exports.getSignIn = (req, res)=>{
     res.render('login.html', {
         estados: ["Estado de México", "Ciudad de México", "Hidalgo", "Nuevo León", 
         "Queretaro", "Baja California", "Baja California Sur", "Colima", "Jalisco", 
@@ -95,7 +95,7 @@ exports.getIniciarSesion = (req, res)=>{
         "Sonora", "Tabasco", "Tamaulipas", "Tlaxcala", "Veracruz", "Yucatan", "Zacatecas"].sort()
     });
 };
-exports.postIniciarSesion = passport.authenticate('local', {
+exports.postSignIn = passport.authenticate('local', {
     successRedirect: '/insider/jugador',
     failureRedirect: '/insider/iniciarSesion',
 });
@@ -104,6 +104,6 @@ exports.getLogOut = (req, res) => {
     res.redirect('/insider');
 };
 
-exports.getDatosJugador = (req,res) => {
+exports.getPlayers = (req,res) => {
     res.render('steamdata.html')
 };

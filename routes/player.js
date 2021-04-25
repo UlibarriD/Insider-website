@@ -19,12 +19,12 @@ function checkNotAuthenticated(req, res, next) {
 }
 
 // CREATE
-router.post('/nuevoJugador', checkNotAuthenticated, playerController.postNuevoJugador);
+router.post('/nuevoJugador', checkNotAuthenticated, playerController.postSignUp);
 // READ
-router.get('/iniciarSesion', checkNotAuthenticated, playerController.getIniciarSesion);
-router.post('/iniciarSesion', checkNotAuthenticated, playerController.postIniciarSesion);
-router.get('/jugador', checkAuthenticated, playerController.getJugador);
-router.get('/datosJugador', checkAuthenticated, playerController.getDatosJugador);
+router.get('/iniciarSesion', checkNotAuthenticated, playerController.getSignIn);
+router.post('/iniciarSesion', checkNotAuthenticated, playerController.postSignIn);
+router.get('/jugador', checkAuthenticated, playerController.getPlayer);
+router.get('/datosJugador', checkAuthenticated, playerController.getPlayers);
 router.get('/cerrarSesion', checkAuthenticated, playerController.getLogOut);
 // UPDATE
 
