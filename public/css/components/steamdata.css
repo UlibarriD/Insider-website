@@ -95,6 +95,15 @@
     justify-content: space-between;
     align-items: center;
 }
+.main .data
+{
+    margin-top: 40px;
+    margin: 32px;
+    padding: 16px;
+    min-height: 100vh;
+    background: #fff;
+}
+
 .toggle-steam
 {
 
@@ -117,11 +126,57 @@
     align-items: center;
     font-size: 48px;
 }
-.main .data
-{
-    margin-top: 40px;
-    width: 90%;
-    height: 600px;
-    background: #fff;
-}
 
+/* Breakout responsive */
+@media screen and (max-width: 990px) 
+{
+    .navigation
+    {
+        left: -300px;
+    }
+    .navigation.active
+    {
+        left: 0;
+        width: 300px;
+    }
+    .main
+    {
+        width: 100%;
+        left: 0;
+    }
+    .main.active
+    {
+        width: calc(100% - 300px);
+        left: 300px;
+    }
+}
+@media screen and (max-width: 758px) 
+{
+    .navigation
+    {
+        width: 100%;
+        left: -100%;
+        z-index: 1000;
+    }
+    .navigation.active
+    {
+        width: 100%;
+        left: 0;
+    }
+    .toggle-steam.active
+    {
+        z-index: 1000;
+        color: #fff;
+        position: fixed;
+        right: 0;
+    }
+    .main, .main.active
+    {
+        width: 100%;
+        left: 0;
+    }
+    .main .data
+    {
+        margin: 16px;
+    }
+}
