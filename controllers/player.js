@@ -94,10 +94,8 @@ exports.postSignIn = passport.authenticate('local', {
     failureRedirect: '/insider/iniciarSesion',
 });
 exports.postSignInUnity = (req, res, next)=>{
-  passport.authenticate('local', function(err, user, info) {
+  passport.authenticate('local', function(err, user) {
     if (err) { return next(err); }
-    console.log("USER FIELD: " + user);
-    console.log("INFO FIELD: " + info);
     if (!user) { return res.send('WRONG CREDENTIALS'); }
     else { return res.send('SUCCESS'); }
   })(req, res, next);
