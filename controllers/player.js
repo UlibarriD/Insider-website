@@ -96,12 +96,13 @@ exports.postSignIn = passport.authenticate('local', {
 exports.postSignInUnity = (req, res, next)=>{
   passport.authenticate('local', function(err, user, info) {
     if (err) { return next(err); }
-    if (!user) { return res.send('NO EXISTE USUARIO'); }
-    req.logIn(user, function(err) {
+    if (!user) { return res.send('WRONG CREDENTIALS'); }
+    else { return res.send('SUCCESS'); }
+    /*req.logIn(user, function(err) {
       if (err) { return next(err); }
-      return res.send('INICIASTE SESIÓN');
-    });
-  })(req, res, next);
+      return res.send('SUCCESS');
+    });*/
+  });
 };
 exports.getLogOut = (req, res) => {
     req.logOut();
