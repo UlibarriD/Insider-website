@@ -102,7 +102,7 @@ exports.postSignInUnity = (req, res, next)=>{
       return res.send('INICIASTE SESIÓN');
     });
   })(req, res, next);
-});
+};
 exports.getLogOut = (req, res) => {
     req.logOut();
     res.redirect('/insider');
