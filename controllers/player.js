@@ -93,20 +93,16 @@ exports.postSignIn = passport.authenticate('local', {
     successRedirect: '/insider/jugador',
     failureRedirect: '/insider/iniciarSesion',
 });
-exports.postSignInUnity = passport.authenticate('local', {
-	successRedirect: '<html>SUCCESS</html>',
-	failureRedirect: '<html>FAIL</html>'
+exports.postSignInUnity = (req, res, next)=>{
+  passport.authenticate('local', function(err, user, info) {
+    if (err) { return next(err); }
+    if (!user) { return res.send('NO EXISTE USUARIO'); }
+    req.logIn(user, function(err) {
+      if (err) { return next(err); }
+      return res.send('INICIASTE SESIÓN');
+    });
+  })(req, res, next);
 });
-/*exports.postSignInUnity = (req, res)=>{
-	passport.authenticate('local', {
-		if (err) { return res.send(err); }
-		if (!user) { return res.send('Invalid'); }
-		req.logIn(user, function(err) {
-		  if (err) { return res.send('password'); }
-		  return res.send('/users/');
-		});
-	})
-};*/
 exports.getLogOut = (req, res) => {
     req.logOut();
     res.redirect('/insider');
