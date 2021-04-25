@@ -24,6 +24,7 @@ router.post('/nuevoJugador', checkNotAuthenticated, playerController.postSignUp)
 router.get('/iniciarSesion', checkNotAuthenticated, playerController.getSignIn);
 router.post('/iniciarSesion', checkNotAuthenticated, playerController.postSignIn);
 router.post('/iniciarSesionUnity', playerController.postSignInUnity);
+router.get('/datosJugadorUnity/:nickname', playerController.getPlayerDataUnity);
 router.get('/jugador', checkAuthenticated, playerController.getPlayer);
 router.get('/datosJugador', checkAuthenticated, playerController.getPlayers);
 router.get('/cerrarSesion', checkAuthenticated, playerController.getLogOut);

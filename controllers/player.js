@@ -94,11 +94,24 @@ exports.postSignIn = passport.authenticate('local', {
     failureRedirect: '/insider/iniciarSesion',
 });
 exports.postSignInUnity = (req, res, next)=>{
-  passport.authenticate('local', function(err, user) {
-    if (err) { return next(err); }
-    if (!user) { return res.send('WRONG CREDENTIALS'); }
-    else { return res.send('SUCCESS'); }
-  })(req, res, next);
+	passport.authenticate('local', function(err, user) {
+		if (err) { return next(err); }
+		if (!user) { return res.send('WRONG CREDENTIALS'); }
+		else { return res.send('SUCCESS'); }
+	})(req, res, next);
+};
+exports.getPlayerDataUnity = (req, res)=>{
+	Player.findAll({
+		where: {
+			nickname:req.params.nickname;
+		}
+	})
+	.then(result=>{
+		res.send(result);
+	})
+	.catch(error=>{
+		res.send('ERROR');
+	});
 };
 exports.getLogOut = (req, res) => {
     req.logOut();
