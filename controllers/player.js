@@ -107,7 +107,7 @@ exports.getPlayerDataUnity = (req, res)=>{
 		}
 	})
 	.then(result=>{
-		res.send(result);
+		res.send(result[0]);
 	})
 	.catch(error=>{
 		res.send('ERROR');
