@@ -94,8 +94,8 @@ exports.postSignIn = passport.authenticate('local', {
     failureRedirect: '/insider/iniciarSesion',
 });
 exports.postSignInUnity = passport.authenticate('local', {
-	successRedirect: 'hola',
-	failureRedirect: 'mundo'
+	successRedirect: '<html>SUCCESS</html>',
+	failureRedirect: '<html>FAIL</html>'
 });
 /*exports.postSignInUnity = (req, res)=>{
 	passport.authenticate('local', {
