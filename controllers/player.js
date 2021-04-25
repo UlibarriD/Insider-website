@@ -102,7 +102,7 @@ exports.postSignInUnity = (req, res, next)=>{
       if (err) { return next(err); }
       return res.send('SUCCESS');
     });*/
-  });
+  })(req, res, next);
 };
 exports.getLogOut = (req, res) => {
     req.logOut();
