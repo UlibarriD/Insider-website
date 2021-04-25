@@ -40,6 +40,23 @@ header ul li
     position: relative;
     list-style: none;
 }
+header ul li.player-links
+{
+    display: none;
+}
+header ul li .avatar
+{
+    width: 50px;
+    border-radius: 50%;
+    margin: 0 15px;
+    cursor: pointer;
+}
+header ul li .dropdown-menu .dropdown-item
+{
+    margin: 0;
+    text-shadow: none;
+    font-weight: 700;
+}
 header ul li a
 {
     position: relative;
@@ -144,6 +161,14 @@ header.sticky ul li a:hover
         opacity: 1;
         display: block;
         padding-top: 20px;
+    }
+    header ul li.player-links
+    {
+        display: block;
+    }
+    header ul li.avatar-dropdown
+    {
+        display: none;
     }
     header.active ul li a
     {

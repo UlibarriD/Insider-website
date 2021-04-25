@@ -32,8 +32,9 @@ app.set('view engine', 'ejs');
 app.use('/insider', playerRoutes);
 
 app.get('/insider', (req, res) => {
-
-    res.render('LandingPage.html')
+    res.render('LandingPage.html', {
+        player: req.user
+    })
 });
 app.get('/insider/tutoriales', (req, res) => {
     res.render('tutorials.html')

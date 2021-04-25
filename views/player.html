@@ -21,14 +21,25 @@
                 <li><a href="/insider#about" onclick="toggle()">Acerca de Insider</a></li>
                 <li><a href="/insider#worlds" onclick="toggle()">Mundos</a></li>
                 <li><a href="/insider#team" onclick="toggle()">Nuestro Equipo</a></li>
-                <li id="login"><a href="/insider/iniciarSesion"> Inicia Sesión</a></li>
+                <% if(player){ %>
+                    <li class="avatar-dropdown">
+                        <img class="avatar dropdown-toggle" data-toggle="dropdown" src="https://image.freepik.com/vector-gratis/cute-dibujos-animados-juegos-gato_138676-2969.jpg" />
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="/insider/jugador">Mi perfil</a>
+                            <a class="dropdown-item" href="/insider/cerrarSesion">Cerrar Sesión</a>
+                        </div>
+                    </li>
+                    <li class="player-links"><a href="/insider/jugador">Mi perfil</a></li>
+                    <li class="player-links"><a href="/insider/cerrarSesion">Cerrar Sesión</a></li>
+                <% } %>
             </ul>
+
             <div class="toggle" onclick="toggle()"></div>
         </header>
         <!-- Banner Player-->
         <section class="banner-player">
             <div class="container">
-                <h1>Bienvenido Diego Ulibarri</h1>
+                <h1>Bienvenido <%= player.name %> <%= player.last_name %></h1>
                 <br>
                 <a href="/insider/cerrarSesion">Jugar</a>
             </div>
@@ -47,7 +58,7 @@
                 <h3>Fecha de nacimiento: <%= player.date_of_birth %></h3>
                 <h3>Género: <%= player.gender %></h3>
                 <h3>Estado: <%= player.state %></h3>
-                <h3>Contraseña: <%= player.password %></h3>
+                <h3>Contraseña: </h3>
             </div>
 
             <div class="stats">

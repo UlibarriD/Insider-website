@@ -80,12 +80,6 @@ exports.postSignUp = (req, res) => {
 };
 
 // READ
-exports.getPlayer = (req, res) =>{
-    res.render('player.html', {
-        player: req.user
-    })
-};
-
 exports.getSignIn = (req, res)=>{
     res.render('login.html', {
         estados: ["Estado de México", "Ciudad de México", "Hidalgo", "Nuevo León", 
@@ -103,7 +97,11 @@ exports.getLogOut = (req, res) => {
     req.logOut();
     res.redirect('/insider');
 };
-
+exports.getPlayer = (req, res) =>{
+    res.render('player.html', {
+        player: req.user
+    })
+};
 exports.getPlayers = (req,res) => {
     res.render('steamdata.html')
 };

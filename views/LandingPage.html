@@ -21,8 +21,22 @@
                 <li><a href="/insider#about" onclick="toggle()">Acerca de Insider</a></li>
                 <li><a href="/insider#worlds" onclick="toggle()">Mundos</a></li>
                 <li><a href="/insider#team" onclick="toggle()">Nuestro Equipo</a></li>
-                <li id="login"><a href="/insider/iniciarSesion"> Inicia Sesión</a></li>
+                <% if(!player){ %>
+                    <li id="login"><a href="/insider/iniciarSesion"> Inicia Sesión</a></li>
+                <% } %>
+                <% if(player){ %>
+                    <li class="avatar-dropdown">
+                        <img class="avatar dropdown-toggle" data-toggle="dropdown" src="https://image.freepik.com/vector-gratis/cute-dibujos-animados-juegos-gato_138676-2969.jpg" />
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="/insider/jugador">Mi perfil</a>
+                            <a class="dropdown-item" href="/insider/cerrarSesion">Cerrar Sesión</a>
+                        </div>
+                    </li>
+                    <li class="player-links"><a href="/insider/jugador">Mi perfil</a></li>
+                    <li class="player-links"><a href="/insider/cerrarSesion">Cerrar Sesión</a></li>
+                <% } %>
             </ul>
+
             <div class="toggle" onclick="toggle()"></div>
         </header>
 
@@ -34,7 +48,7 @@
             </div>
 
             <div class="cards disabled" style="background-image: linear-gradient(rgba(69, 123, 157, 0.2), rgba(69, 123, 157, 0.2)), url(https://image.freepik.com/vector-gratis/iconos-analisis-negocios-brillantes-isometricos-establecidos-personas-que-hacen-varios-graficos-diagramas-ilustracion-vector-aislado-3d_1284-30862.jpg);">
-                <h2><a href="/insider/DatosJugador">STEAM</a></h2> 
+                <h2><a href="/insider/DatosJugador">STEAM</a> </h2> 
             </div>
             <div class="cards " id="cardActive" style="background-image: linear-gradient(rgba(69, 123, 157, 0.2), rgba(69, 123, 157, 0.2)), url(https://image.freepik.com/vector-gratis/cute-dibujos-animados-juegos-gato_138676-2969.jpg);">
                 <h2><a href="/insider/download">Jugar</a></h2>
