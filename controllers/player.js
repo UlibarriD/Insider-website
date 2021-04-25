@@ -103,7 +103,7 @@ exports.postSignInUnity = (req, res, next)=>{
 exports.getPlayerDataUnity = (req, res)=>{
 	Player.findAll({
 		where: {
-			nickname:req.params.nickname;
+			nickname:req.params.nickname
 		}
 	})
 	.then(result=>{
