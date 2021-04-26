@@ -101,7 +101,8 @@ exports.postSignInUnity = (req, res, next)=>{
 	})(req, res, next);
 };
 exports.getPlayerDataUnity = (req, res)=>{
-	Player.findAll({
+	res.send(req.user);
+	/*Player.findAll({
 		where: {
 			nickname:req.params.nickname
 		}
@@ -111,7 +112,7 @@ exports.getPlayerDataUnity = (req, res)=>{
 	})
 	.catch(error=>{
 		res.send('ERROR');
-	});
+	});*/
 };
 exports.getLogOut = (req, res) => {
     req.logOut();
