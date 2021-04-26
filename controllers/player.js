@@ -104,6 +104,7 @@ exports.postSignInUnity = (req, res, next)=>{
 	})(req, res, next);
 };
 exports.getPlayerDataUnity = (req, res)=>{
+	console.log(req.user);
 	res.send(req.user);
 	/*Player.findAll({
 		where: {
