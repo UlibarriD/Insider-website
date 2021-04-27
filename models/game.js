@@ -6,8 +6,9 @@ const Game = (sequelize => {
         // Table attributes
         id_game: {
             type: Sequelize.INTEGER,
-            prymaryKey: true,
+            primaryKey: true,
             allowNull: false,
+            autoIncrement:true
         },
         begin_date: {
             type: Sequelize.DATE,
