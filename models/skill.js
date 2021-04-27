@@ -7,10 +7,6 @@ const Skill = (sequelize => {
         skill_name: {
             type: Sequelize.STRING,
             allowNull: false
-        },
-        skill_description: {
-            type: Sequelize.STRING,
-            allowNull: false
         }
     })
 })

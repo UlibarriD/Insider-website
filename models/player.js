@@ -13,16 +13,10 @@ const Player = (sequelize => {
         name: {
             type: Sequelize.STRING,
             allowNull: false,
-            validate: {
-                is: /^[a-z]+$/i 
-            }
         },
         last_name: {
             type: Sequelize.STRING,
             allowNull: false,
-            validate: {
-                is: /^[a-z]+$/i 
-            }
         },
         date_of_birth: {
             type: Sequelize.DATEONLY,

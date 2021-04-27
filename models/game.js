@@ -7,7 +7,7 @@ const Game = (sequelize => {
         id_game: {
             type: Sequelize.INTEGER,
             prymaryKey: true,
-            allowNull: false
+            allowNull: false,
         },
         begin_date: {
             type: Sequelize.DATE,
@@ -16,7 +16,7 @@ const Game = (sequelize => {
         },
         end_date: {
             type: Sequelize.DATE,
-            allowNull: false
+            allowNull: true
         },
         score: {
             type: Sequelize.INTEGER,

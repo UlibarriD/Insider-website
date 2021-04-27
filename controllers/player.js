@@ -2,7 +2,8 @@
 const Player = require("../util/database").models.player;
 const bcrypt = require('bcrypt');
 const passport = require('passport');
-const flash = require('connect-flash');
+const sequelize = require('../util/database');
+const Sequelize = require('sequelize');
 
 // CREATE
 exports.postSignUp = (req, res) => {

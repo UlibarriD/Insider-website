@@ -5,8 +5,8 @@ function applyRelations(sequelize){
     const Game = sequelize.models.game;
     const WorldSkill = sequelize.models.worldSkill;
 
-    Player.belongsToMany(World, {through: Game});
-    World.belongsToMany(Player, {through: Game});
+    World.belongsToMany(Player, {through: {model: Game, unique: false}});
+    Player.belongsToMany(World, {through: {model: Game, unique: false}});
 
     World.belongsToMany(Skill, {through: WorldSkill});
     Skill.belongsToMany(World, {through: WorldSkill});

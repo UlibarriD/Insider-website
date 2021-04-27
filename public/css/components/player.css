@@ -37,12 +37,36 @@
 .player .stats
 {
     display: none;
+    width: 100%;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    padding: 16px;
+    margin-bottom: 16px;
+    justify-content: center;
+    align-items: center;
+}
+.player .stats.active
+{
+    display: flex;
 }
 
 /* History */
 .player .history
 {
     display: none;
+}
+.player .history.active
+{
+    display: block;
+}
+.player .history .score
+{
+    width: 100%;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    padding: 16px;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 

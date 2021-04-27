@@ -62,14 +62,30 @@
             </div>
 
             <div class="stats">
-                <h1>stats</h1>
+                <canvas id="playerScores" style="max-width: 600px; max-height: 600px;"></canvas>
             </div>
 
             <div class="history">
-                <h3>Último mes</h3>
-                <h3>Último año</h3>
-            </div>
+                <div class="score">
+                    <canvas id="scienceScores" style="max-width: 600px; max-height: 600px;"></canvas>
+                </div>
 
+                <div class="score">
+                    <canvas id="techScore" style="max-width: 600px; max-height: 600px;"></canvas>
+                </div>
+
+                <div class="score">
+                    <canvas id="engScore" style="max-width: 600px; max-height: 600px;"></canvas>
+                </div>
+
+                <div class="score">
+                    <canvas id="artScore" style="max-width: 600px; max-height: 600px;"></canvas>
+                </div>
+
+                <div class="score">
+                    <canvas id="mathScore" style="max-width: 600px; max-height: 600px;"></canvas>
+                </div>
+            </div>
         </section>
 
         <!-- Footer -->
@@ -87,9 +103,14 @@
             </div>   
         </footer>
 
+
+        <!-- Chart.js -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.1.1/dist/chart.min.js"></script>
+
         <!-- Js -->
         <script src="../js/navbar.js"></script>
         <script src="../js/player.js"></script>
+        <script src="../js/playerStats.js"></script>
         <!-- Font awesome -->
         <script src="https://kit.fontawesome.com/d0fe208db5.js" crossorigin="anonymous"></script>
         <!-- Bootstrap JS -->
