@@ -22,7 +22,7 @@ sequelize.sync({ force: true })
         Skill.create({skill_name: 'Agilidad Mental'});
         Skill.create({skill_name: 'Razonamiento lógico matemático'});
         Skill.create({skill_name: 'Razonamiento Abstracto'});
-        Skill.create({skill_name: 'Resolución numérico'});
+        Skill.create({skill_name: 'Resolución numérica'});
         // Creating worldSkills
         WorldSkill.create({worldId: 5, skillId: 6, score: 0.6});
         WorldSkill.create({worldId: 5, skillId: 7, score: 0.4});

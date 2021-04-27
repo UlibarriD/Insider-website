@@ -121,11 +121,34 @@ exports.getLogOut = (req, res) => {
     req.logOut();
     res.redirect('/insider');
 };
-exports.getPlayer = (req, res) =>{
-    res.render('player.html', {
-        player: req.user
-    })
+exports.getPlayer = (req, res)  =>{
+    const nickname = req.user.nickname;
+    sequelize.query(
+        `SELECT sum(score) as score, worldId 
+        FROM game 
+        WHERE playerNickname = '${nickname}' and end_date >= DATEADD(day, 1-DATEPART(dw, getdate()), convert(date, getdate())) 
+        GROUP BY end_date, worldId`, {type:Sequelize.QueryTypes.SELECT})
+        
+        .then(result => {
+            console.log(result)
+            sequelize.query(`select ws.skillID, sum(g.score * ws.score) as score 
+            from worldSkill ws, game g 
+            where ws.worldId = g.worldId and g.playerNickname = '${nickname}' 
+            group by ws.skillId, ws.worldId 
+            order by ws.skillId asc`, {type:Sequelize.QueryTypes.SELECT})
+            .then(result2 => {
+                res.render('player.html', {
+                    player: req.user,
+                    history: result,
+                    skills: result2
+                })
+            })
+        })
 };
+
+
+
 exports.getPlayers = (req,res) => {
     res.render('steamdata.html')
 };
+
