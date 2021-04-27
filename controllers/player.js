@@ -128,9 +128,7 @@ exports.getPlayer = (req, res)  =>{
         FROM game 
         WHERE playerNickname = '${nickname}' and end_date >= DATEADD(day, 1-DATEPART(dw, getdate()), convert(date, getdate())) 
         GROUP BY end_date, worldId`, {type:Sequelize.QueryTypes.SELECT})
-        
         .then(result => {
-            console.log(result)
             sequelize.query(`select ws.skillID, sum(g.score * ws.score) as score 
             from worldSkill ws, game g 
             where ws.worldId = g.worldId and g.playerNickname = '${nickname}' 
@@ -146,9 +144,17 @@ exports.getPlayer = (req, res)  =>{
         })
 };
 
-
-
 exports.getPlayers = (req,res) => {
-    res.render('steamdata.html')
+    sequelize.query(`SELECT area, DATENAME(WEEKDAY, begin_date), COUNT(id) as dtendency
+        FROM Game, World 
+        WHERE id = worldId 
+        GROUP BY area, DATENAME(WEEKDAY, begin_date)
+        order by area`, {type:Sequelize.QueryTypes.SELECT})
+        .then(result => {
+            console.log(result)
+            res.render('steamdata.html', {
+                tendency: result
+            })
+        })
 };
 
