@@ -98,7 +98,10 @@ exports.postSignInUnity = (req, res, next)=>{
 	passport.authenticate('local', function(err, user) {
 		if (err) { return next(err); }
 		if (!user) { return res.send('WRONG CREDENTIALS'); }
-		else { return res.send('SUCCESS'); }
+		req.logIn(user, function(err) {
+			if (err) { return next(err); }
+			return res.send('SUCCESS');
+		});
 	})(req, res, next);
 };
 exports.getPlayerDataUnity = (req, res)=>{
