@@ -117,7 +117,7 @@ exports.getPlayer = (req, res)  =>{
         GROUP BY end_date, worldId`, {type:Sequelize.QueryTypes.SELECT})
         .then(result => {
             sequelize.query(`
-            select sum(g.score * ws.score) as score
+            select ws.skillID as skill, sum(g.score * ws.score) as score 
             from worldSkill ws, game g 
             where ws.worldId = g.worldId and g.playerNickname = '${nickname}' 
             group by ws.skillId, ws.worldId 

@@ -112,10 +112,38 @@
         <script src="../js/player.js"></script>
         <script src="../js/playerStats.js"></script>  
         <!-- Skill chart-->
-        <% var skillValues = []; %>
+        <% var deduccion = "0"; %>
+        <% var memoria = "0"; %>
+        <% var pensamientoCreativo = "0"; %>
+        <% var atencion = "0"; %>
+        <% var coordinacion = "0"; %>
+        <% var agilidadMental = "0"; %>
+        <% var razonamientolm = "0"; %>
+        <% var razonamientoA = "0"; %>
+        <% var resolucionN = "0"; %>
         <% for(var i = 0; i < skills.length; i++) { %>
-            <% skillValues.push(skills[i].score) %>
+            <% if(skills[i].skill === 1){ %>
+                <% deduccion = skills[i].score %>
+            <% }else if(skills[i].skill === 2) { %>
+                <% memoria = skills[i].score %>
+            <% }else if(skills[i].skill === 3) { %>
+                <% pensamientoCreativo = skills[i].score %>
+            <% }else if(skills[i].skill === 4) { %>
+                <% atencion = skills[i].score %>
+            <% }else if(skills[i].skill === 5) { %>
+                <% coordinacion = skills[i].score %>
+            <% }else if(skills[i].skill === 6) { %>
+                <% agilidadMental = skills[i].score %>
+            <% }else if(skills[i].skill === 7) { %>
+                <% razonamientolm = skills[i].score %>
+            <% }else if(skills[i].skill === 8) { %>
+                <% razonamientoA = skills[i].score %>
+            <% }else if(skills[i].skill === 9) { %>
+                <% resolucionN = skills[i].score %>
+            <% } %>      
         <% } %>
+        <% var skillValues = [deduccion, memoria, pensamientoCreativo, atencion, coordinacion, agilidadMental, razonamientolm, razonamientoA, resolucionN]; %>
+
         <script>radar("<%= skillValues %>")</script>
         <!-- World History charts-->
         <% var scienceValues = []; %>
