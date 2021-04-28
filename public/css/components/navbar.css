@@ -1,4 +1,5 @@
-header {
+header 
+{
     position: fixed;
     top: 0;
     left: 0;
@@ -10,23 +11,20 @@ header {
     z-index: 1000;
     transition: 0.6s;
 }
-header .logo 
+header .logo img.white-insider
 {
-    position: relative;
-    font-weight: bolder;
-    color: #fff;
-    font-size: 2em;
-    text-transform: uppercase;
-    text-decoration: none;
-    letter-spacing: 2px;
-    text-shadow: 1px 1px 3px rgba(0,0,0,1);
-
+    width: 295px;
+    position: absolute;
+    top: 20px;
+    transform: translateY(0);
+    transition: transform ease-out 0.3s;
 }
-header .logo:hover {
-    text-decoration: none;
-    color: #A8DADC;
+header .logo img.black-insider
+{
+    transform: translateY(-200%);
+    transition: transform ease-out 0.3s;
+    width: 200px;
 }
-
 header ul
 {
     position: relative;
@@ -80,7 +78,20 @@ header.sticky
     border: 1px solid rgba(0, 0, 0, 0.1);
     transition: 0.6s;
 }
-header.sticky .logo,
+header.sticky .logo img.white-insider
+{
+    transform: translateY(-200%);
+    width: 295px;
+}
+header.sticky .logo img.black-insider
+{
+    display: block;
+    transform: translateY(0);
+    width: 200px;
+    position: absolute;
+    top: 2px;
+
+}
 header.sticky ul li a
 {
     color: #1D3557;
@@ -91,7 +102,6 @@ header.sticky ul li a
     font-size: 17px;
 }
 
-header.sticky .logo:hover,
 header.sticky ul li a:hover
 {
     color: #457B9D;
@@ -103,7 +113,7 @@ header.sticky ul li a:hover
 }
 
 /* Responsive */
-@media screen and (max-width: 1200px)
+@media screen and (max-width: 1350px)
 {
     .toggle
     {
@@ -140,7 +150,7 @@ header.sticky ul li a:hover
     header, header.sticky
     {
         background: #fff;
-        padding: 5px 50px;
+        padding: 10px 50px;
     }
     header ul
     {
@@ -177,12 +187,24 @@ header.sticky ul li a:hover
         font-size: 30px;
     }
 
-    header .logo, 
+    header .logo img.white-insider
+    {
+        display: none;
+    } 
+    header .logo img.black-insider
+    {
+        display: none;
+    }
     header ul li a
     {
         color: #1D3557;
         text-shadow: none;
     }
+    header.sticky .logo img.black-insider
+    {
+        display: none;
+    }
+
 }
 
 @media screen and (max-width: 800px)
