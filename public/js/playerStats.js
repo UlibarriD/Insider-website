@@ -79,7 +79,7 @@ function tech(techData){
             datasets: [{
                 label: 'Puntuación',
                 data: techData.split(','),
-                fill: false,
+                fill: true,
                 borderColor: '#E63946',
                 tension: 0.1
             }]
@@ -109,7 +109,7 @@ function eng(engData){
             datasets: [{
                 label: 'Puntuación',
                 data: engData.split(','),
-                fill: false,
+                fill: true,
                 borderColor: '#1D3557',
                 tension: 0.1
             }]
@@ -139,7 +139,7 @@ function art(artData){
             datasets: [{
                 label: 'Puntuación',
                 data: artData.split(','),
-                fill: false,
+                fill: true,
                 borderColor: '#ff006e',
                 tension: 0.1
             }]
@@ -169,7 +169,7 @@ function math(mathData){
             datasets: [{
                 label: 'Puntuación',
                 data: mathData.split(','),
-                fill: false,
+                fill: true,
                 borderColor: '#457B9D',
                 tension: 0.1
             }]

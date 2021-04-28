@@ -152,7 +152,6 @@ exports.getPlayers = (req,res) => {
         GROUP BY area, DATENAME(WEEKDAY, end_date)
         order by area`, {type:Sequelize.QueryTypes.SELECT})
         .then(result => {
-            console.log(result)
             res.render('steamdata.html', {
                 tendency: result
             })

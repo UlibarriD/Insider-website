@@ -49,7 +49,7 @@ function Tendencies(scidata, techdata, engdata, artdata, mathdata){
               },
               title: {
                 display: true,
-                text: 'Chart.js Line Chart'
+                text: 'Tendencias de la semana'
               }
             }
         },
