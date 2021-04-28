@@ -10,6 +10,7 @@ require("./util/passport-config")(passport);
 const sequelize = require("./util/database.js");
 //Import routes
 const playerRoutes = require("./routes/player.js");
+const gameRoutes = require("./routes/game.js");
 // Create Server
 const app = express();
 // Middleware
