@@ -9,7 +9,7 @@ function radar(playerScoresData){
             labels: competences,
             datasets: [{
                 label: 'Puntajes',
-                data: playerScoresData,
+                data: playerScoresData.split(','),
                 fill: true,
                 backgroundColor: 'rgba(230, 57, 70, 0.4)',
                 borderColor: redColor,
@@ -31,7 +31,7 @@ function radar(playerScoresData){
                     angleLines: {
                         display: false
                     },
-                    suggestedMin: 20,
+                    suggestedMin: 10,
                     suggestedMax: 100
                 }
             },
@@ -48,8 +48,8 @@ function science(scienceData){
             labels: weekDays,
             datasets: [{
                 label: 'Puntuación',
-                data: scienceData,
-                fill: false,
+                data: scienceData.split(','),
+                fill: true,
                 borderColor: 'rgb(75, 192, 192)',
                 tension: 0.1
             }]
@@ -60,7 +60,13 @@ function science(scienceData){
                     text: "Puntuación semanal de Ciencia",
                     display: true,
                 }
-            }
+            },
+            scales: {
+                y: {
+                    suggestedMin: 0,
+                    suggestedMax: 100
+                }
+            },
         },
     })
 }
@@ -72,7 +78,7 @@ function tech(techData){
             labels: weekDays,
             datasets: [{
                 label: 'Puntuación',
-                data: techData,
+                data: techData.split(','),
                 fill: false,
                 borderColor: '#E63946',
                 tension: 0.1
@@ -84,7 +90,13 @@ function tech(techData){
                     text: "Puntuación semanal de Tecnología",
                     display: true,
                 }
-            }
+            },
+            scales: {
+                y: {
+                    suggestedMin: 0,
+                    suggestedMax: 100
+                }
+            },
         },
     })
 }
@@ -96,7 +108,7 @@ function eng(engData){
             labels: weekDays,
             datasets: [{
                 label: 'Puntuación',
-                data: engData,
+                data: engData.split(','),
                 fill: false,
                 borderColor: '#1D3557',
                 tension: 0.1
@@ -108,7 +120,13 @@ function eng(engData){
                     text: "Puntuación semanal de Ingeniería",
                     display: true,
                 }
-            }
+            },
+            scales: {
+                y: {
+                    suggestedMin: 0,
+                    suggestedMax: 100
+                }
+            },
         },
     })
 }
@@ -120,7 +138,7 @@ function art(artData){
             labels: weekDays,
             datasets: [{
                 label: 'Puntuación',
-                data: artData,
+                data: artData.split(','),
                 fill: false,
                 borderColor: '#ff006e',
                 tension: 0.1
@@ -132,7 +150,13 @@ function art(artData){
                     text: "Puntuación semanal de Arte",
                     display: true,
                 }
-            }
+            },
+            scales: {
+                y: {
+                    suggestedMin: 0,
+                    suggestedMax: 100
+                }
+            },
         },
     })
 }
@@ -144,7 +168,7 @@ function math(mathData){
             labels: weekDays,
             datasets: [{
                 label: 'Puntuación',
-                data: mathData,
+                data: mathData.split(','),
                 fill: false,
                 borderColor: '#457B9D',
                 tension: 0.1
@@ -156,7 +180,13 @@ function math(mathData){
                     text: "Puntuación semanal de Matemáticas",
                     display: true,
                 }
-            }
+            },
+            scales: {
+                y: {
+                    suggestedMin: 0,
+                    suggestedMax: 100
+                }
+            },
         },
     })
 }

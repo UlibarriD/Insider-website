@@ -123,13 +123,14 @@ exports.getLogOut = (req, res) => {
 };
 exports.getPlayer = (req, res)  =>{
     const nickname = req.user.nickname;
-    sequelize.query(
-        `SELECT sum(score) as score, worldId 
+    sequelize.query(`
+        SELECT sum(score) as score, worldId 
         FROM game 
         WHERE playerNickname = '${nickname}' and end_date >= DATEADD(day, 1-DATEPART(dw, getdate()), convert(date, getdate())) 
         GROUP BY end_date, worldId`, {type:Sequelize.QueryTypes.SELECT})
         .then(result => {
-            sequelize.query(`select ws.skillID, sum(g.score * ws.score) as score 
+            sequelize.query(`
+            select sum(g.score * ws.score) as score
             from worldSkill ws, game g 
             where ws.worldId = g.worldId and g.playerNickname = '${nickname}' 
             group by ws.skillId, ws.worldId 
