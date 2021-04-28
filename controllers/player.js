@@ -104,19 +104,6 @@ exports.postSignInUnity = (req, res, next)=>{
 		});
 	})(req, res, next);
 };
-exports.getPlayerDataUnity = (req, res)=>{
-	Player.findAll({
-		where: {
-			nickname:req.params.nickname
-		}
-	})
-	.then(result=>{
-		res.send(result[0]);
-	})
-	.catch(error=>{
-		res.send('ERROR');
-	});
-};
 exports.getLogOut = (req, res) => {
     req.logOut();
     res.redirect('/insider');

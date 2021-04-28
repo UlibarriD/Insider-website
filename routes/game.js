@@ -4,4 +4,4 @@ const router = express.Router();
 const gameController = require("../controllers/game")
 
 // Create
-router.post('/newGame', gameController.postNewGame);
+router.post('/nuevaPartida', gameController.postNewGame);
