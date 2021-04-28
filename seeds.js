@@ -34,22 +34,27 @@ sequelize.sync({ force: true })
         WorldSkill.create({worldId: 1, skillId: 2, score: 0.7});
         WorldSkill.create({worldId: 1, skillId: 3, score: 0.3});
         // Creating players
-        const Diego = new Player({name: 'Diego', last_name: 'Ulibarri', nickname: 'Squarish', date_of_birth: '2000-06-06', gender: 'M', state: 'Hidalgo', password: '123456', page_policies: 'on', steam: 'on'});
-        const Fernanda = new Player({name: 'Fernanda', last_name: 'Ramírez', nickname: 'Fernanda1a1a', date_of_birth: '2001-05-20', gender: 'F', state: 'Estado de México', password: '123456', page_policies: 'on', steam: 'on'});
-        const Joe = new Player({name: 'Youthan', last_name: 'Irigoyen', nickname: 'FazeYouthan', date_of_birth: '2000-06-18', gender: 'M', state: 'Estado de México', password: '123456', page_policies: 'on', steam: 'on'});
+        const Diego = new Player({name: 'Diego', last_name: 'Ulibarri', nickname: 'Squarish', date_of_birth: '2000-06-06', gender: 'M', state: 'Hidalgo', password: 'st1234', page_policies: 'on', steam: 'on'});
+        const Fernanda = new Player({name: 'Fernanda', last_name: 'Ramírez', nickname: 'Fernanda1a1a', date_of_birth: '2001-05-20', gender: 'F', state: 'Estado de México', password: 'st1234', page_policies: 'on', steam: 'on'});
+        const Joe = new Player({name: 'Youthan', last_name: 'Irigoyen', nickname: 'FazeYouthan', date_of_birth: '2000-06-18', gender: 'M', state: 'Estado de México', password: 'st1234', page_policies: 'on', steam: 'on'});
+        const Rivers = new Player({name: 'Emilio', last_name: 'Rios', nickname: 'BloodyEmily', date_of_birth: '2001-07-28', gender: 'M', state: 'Estado de México', password: 'st1234', page_policies: 'on', steam: 'on'});
+        const Carlitos = new Player({name: 'Carlos', last_name: 'Toapanta', nickname: 'Carlitoustoe', date_of_birth: '2001-07-24', gender: 'M', state: 'Estado de México', password: 'st1234', page_policies: 'on', steam: 'on'});
+        const STEAM = new Player({name: 'Movimiento', last_name: 'STEAM', nickname: 'STEAM', date_of_birth: '2000-01-01', gender: 'F', state: 'Estado de México', password: 'st1234', page_policies: 'on', steam: 'on'});
         bcrypt.genSalt(10,(err,salt) => bcrypt.hash(Joe.password,salt, (err,hash)=> {
             if(err) throw err;
             Joe.password = hash;
             Diego.password = hash;
             Fernanda.password = hash;
+            Rivers.password = hash;
+            Carlitos.password = hash;
+            STEAM.password = hash;
             Diego.save();
             Fernanda.save();
             Joe.save();
+            Rivers.save();
+            Carlitos.save();
+            STEAM.save();
         }));
     })
     .catch(error => console.log(error))
-
-
-//Game.create({id_game: 1, playerNickname: 'Squarish', worldId: 1, begin_date: '2021-04-19 18:05:28.0000', end_date: '2021-04-19 18:20:31.0000', score: 3000});
-
  

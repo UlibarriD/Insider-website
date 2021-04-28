@@ -15,6 +15,8 @@
     min-height: 850px;
     box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
     padding: 40px;
+    display: flex;
+    flex-direction: column;
 }
 .tutorial-container #close
 {
@@ -31,13 +33,12 @@
 .tutorial-container .world
 {
     padding: 48px;
-    display: flex;
-    justify-content: center;
-    min-height: 100%;
 }
+
 .tab-content > .active
 {
     display: flex;
+    justify-content: space-between;
 }
 .tab-content > .tab-pane iframe
 {
@@ -45,6 +46,37 @@
     align-self: center;
     height: 400px;
 }
+.world-instructions h4
+{
+    font-weight: 700;
+    font-size: 21px;
+}
+.world-instructions p
+{
+    margin-bottom: 0;
+}
+.world-instructions table
+{
+    width: 95%;
+    border: 2px solid gray;
+    margin: 8px 0;
+}
+.world-instructions table th
+{
+    text-align: center;
+    padding: 8px;
+    color: #1D3557;
+}
+.world-instructions table th h4
+{
+    margin-bottom: 0;
+    border-bottom: 2px solid gray;
+    padding-bottom: 4px;
+    font-weight: 700;
+    font-size: 21px;
+    color: #1D3557;
+}
+
 .nav-tabs
 {
     border-bottom: none;
@@ -70,6 +102,43 @@
     color: #457B9D;
 }
 
+.red
+{
+    color: red;
+}
+.blue
+{
+    color: royalblue;
+}
+.yellow
+{
+    color: #efb810;
+}
+.gray
+{
+    color: gray;
+}
+.orange
+{
+    color: #f69100;
+}
+.green
+{
+    color: #008f39;
+}
+.violet
+{
+    color: violet;
+}
+.bv
+{
+    color: blueviolet;
+}
+.brown
+{
+    color: #804000;
+}
+
 
 /* breakout responsive */
 @media screen and (max-width: 1500px) 
@@ -90,6 +159,10 @@
     .tab-content > .tab-pane iframe
     {
         flex: none;
+    }
+    .world-instructions table
+    {
+        width: 100%;
     }
 }
 @media screen and (max-width: 900px)
