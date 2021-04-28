@@ -10,11 +10,6 @@ const Game = (sequelize => {
             allowNull: false,
             autoIncrement:true
         },
-        begin_date: {
-            type: Sequelize.DATEONLY,
-            defaultValue: Sequelize.NOW,
-            allowNull: false
-        },
         end_date: {
             type: Sequelize.DATEONLY,
             allowNull: true
