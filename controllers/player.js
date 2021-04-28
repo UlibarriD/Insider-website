@@ -146,10 +146,10 @@ exports.getPlayer = (req, res)  =>{
 };
 
 exports.getPlayers = (req,res) => {
-    sequelize.query(`SELECT area, DATENAME(WEEKDAY, begin_date), COUNT(id) as dtendency
+    sequelize.query(`SELECT area, DATENAME(WEEKDAY, end_date), COUNT(id) as dtendency
         FROM Game, World 
         WHERE id = worldId 
-        GROUP BY area, DATENAME(WEEKDAY, begin_date)
+        GROUP BY area, DATENAME(WEEKDAY, end_date)
         order by area`, {type:Sequelize.QueryTypes.SELECT})
         .then(result => {
             console.log(result)
