@@ -133,7 +133,8 @@ exports.getPlayer = (req, res)  =>{
 };
 
 exports.getPlayers = (req,res) => {
-    sequelize.query(`SELECT area, DATENAME(WEEKDAY, end_date), COUNT(id) as dtendency
+    if(req.user.steam === 'on'){
+        sequelize.query(`SELECT area, DATENAME(WEEKDAY, end_date), COUNT(id) as dtendency
         FROM Game, World 
         WHERE id = worldId 
         GROUP BY area, DATENAME(WEEKDAY, end_date)
@@ -143,5 +144,9 @@ exports.getPlayers = (req,res) => {
                 tendency: result
             })
         })
+    } else {
+        res.redirect('/insider');
+    }
+
 };
 
