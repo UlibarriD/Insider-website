@@ -146,29 +146,39 @@
 
         <script>radar("<%= skillValues %>")</script>
         <!-- World History charts-->
+        <% var scienceWeekDay = [] %>
         <% var scienceValues = []; %>
+        <% var techWeekDay = [] %>
         <% var techValues = []; %>
+        <% var engWeekDay = [] %>
         <% var engValues = []; %>
+        <% var artWeekDay = [] %>
         <% var artValues = []; %>
+        <% var mathWeekDay = [] %>
         <% var mathValues = []; %>
         <% for(var i = 0; i < history.length; i++) { %>
             <% if(history[i].worldId === 1){ %>
                 <% scienceValues.push(history[i].score) %>
+                <% scienceWeekDay.push(history[i].date) %>
             <% } else if(history[i].worldId === 2){ %>
                 <% techValues.push(history[i].score) %>
+                <% techWeekDay.push(history[i].date) %>
             <% } else if(history[i].worldId === 3){ %>
                 <% engValues.push(history[i].score) %>
+                <% engWeekDay.push(history[i].date) %>
             <% } else if(history[i].worldId === 4){ %>
                 <% artValues.push(history[i].score) %>
+                <% artWeekDay.push(history[i].date) %>
             <% } else if(history[i].worldId === 5){ %>
                 <% mathValues.push(history[i].score) %>
+                <% mathWeekDay.push(history[i].date) %>
             <% } %>
         <% } %>
-        <script> science("<%= scienceValues %>") </script>
-        <script> tech("<%= techValues %>") </script>
-        <script> eng("<%= engValues %>") </script>
-        <script> art("<%= artValues %>") </script>
-        <script> math("<%= mathValues %>") </script>
+        <script> science("<%= scienceValues %>", "<%= scienceWeekDay %>") </script>
+        <script> tech("<%= techValues %>", "<%= techWeekDay %>") </script>
+        <script> eng("<%= engValues %>", "<%= engWeekDay %>") </script>
+        <script> art("<%= artValues %>", "<%= artWeekDay %>") </script>
+        <script> math("<%= mathValues %>", "<%= mathWeekDay %>") </script>
         <!-- Font awesome -->
         <script src="https://kit.fontawesome.com/d0fe208db5.js" crossorigin="anonymous"></script>
         <!-- Bootstrap JS -->

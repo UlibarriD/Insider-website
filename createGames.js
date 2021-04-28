@@ -14,6 +14,14 @@ sequelize.sync({ force: false })
         Game.create({ playerNickname: 'Squarish', worldId: 1, end_date: '2021-05-01', score: 4910}); 
         Game.create({ playerNickname: 'Squarish', worldId: 1, end_date: '2021-05-02', score: 1220});
 
+        Game.create({ playerNickname: 'bloodyemily', worldId: 1, end_date: '2021-04-26', score: 2100})
+        Game.create({ playerNickname: 'bloodyemily', worldId: 1, end_date: '2021-04-28', score: 1230})
+        Game.create({ playerNickname: 'bloodyemily', worldId: 5, end_date: '2021-04-27', score: 2300})
+
+        Game.create({ playerNickname: 'carlitoustoe', worldId: 2, end_date: '2021-04-27', score: 1180})
+        Game.create({ playerNickname: 'carlitoustoe', worldId: 3, end_date: '2021-04-27', score: 3000})
+        Game.create({ playerNickname: 'carlitoustoe', worldId: 4, end_date: '2021-04-27', score: 2400})
+
         Game.create({ playerNickname: 'Squarish', worldId: 1, end_date: '2021-04-13', score: 3810});
         Game.create({ playerNickname: 'Squarish', worldId: 1, end_date: '2021-04-20', score: 4210});
         Game.create({ playerNickname: 'Squarish', worldId: 1, end_date: '2021-04-24', score: 6810});

@@ -111,7 +111,7 @@ exports.getLogOut = (req, res) => {
 exports.getPlayer = (req, res)  =>{
     const nickname = req.user.nickname;
     sequelize.query(`
-        SELECT sum(score) as score, worldId 
+        SELECT sum(score) as score, worldId, DATENAME(WEEKDAY, end_date) as date
         FROM game 
         WHERE playerNickname = '${nickname}' and end_date >= DATEADD(day, 1-DATEPART(dw, getdate()), convert(date, getdate())) 
         GROUP BY end_date, worldId`, {type:Sequelize.QueryTypes.SELECT})

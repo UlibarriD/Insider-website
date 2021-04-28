@@ -39,13 +39,12 @@ function radar(playerScoresData){
     })
 }
 
-var weekDays = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo']
-function science(scienceData){
+function science(scienceData, wd){
     var scienceScores = document.getElementById('scienceScores').getContext('2d');
     new Chart(scienceScores, {
         type: 'line',
         data: {
-            labels: weekDays,
+            labels: wd.split(','),
             datasets: [{
                 label: 'Puntuación',
                 data: scienceData.split(','),
@@ -70,12 +69,12 @@ function science(scienceData){
         },
     })
 }
-function tech(techData){
+function tech(techData, wd){
     var techScore = document.getElementById('techScore').getContext('2d');
     new Chart(techScore, {
         type: 'line',
         data: {
-            labels: weekDays,
+            labels: wd.split(','),
             datasets: [{
                 label: 'Puntuación',
                 data: techData.split(','),
@@ -100,12 +99,12 @@ function tech(techData){
         },
     })
 }
-function eng(engData){
+function eng(engData, wd){
     var engScore = document.getElementById('engScore').getContext('2d');
     new Chart(engScore, {
         type: 'line',
         data: {
-            labels: weekDays,
+            labels: wd.split(','),
             datasets: [{
                 label: 'Puntuación',
                 data: engData.split(','),
@@ -130,12 +129,12 @@ function eng(engData){
         },
     })
 }
-function art(artData){
+function art(artData, wd){
     var artScore = document.getElementById('artScore').getContext('2d');
     new Chart(artScore, {
         type: 'line',
         data: {
-            labels: weekDays,
+            labels: wd.split(','),
             datasets: [{
                 label: 'Puntuación',
                 data: artData.split(','),
@@ -160,12 +159,12 @@ function art(artData){
         },
     })
 }
-function math(mathData){
+function math(mathData, wd){
     var mathScore = document.getElementById('mathScore').getContext('2d');
     new Chart(mathScore, {
         type: 'line',
         data: {
-            labels: weekDays,
+            labels: wd.split(','),
             datasets: [{
                 label: 'Puntuación',
                 data: mathData.split(','),
