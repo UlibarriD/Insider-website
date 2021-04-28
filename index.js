@@ -31,6 +31,7 @@ app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs');
 // Server configuration
 app.use('/insider', playerRoutes);
+app.use('/insider', gameRoutes);
 
 app.get('/insider', (req, res) => {
     res.render('LandingPage.html', {
