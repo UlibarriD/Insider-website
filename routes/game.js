@@ -5,3 +5,5 @@ const gameController = require("../controllers/game")
 
 // Create
 router.post('/nuevaPartida', gameController.postNewGame);
+
+module.exports = router;
