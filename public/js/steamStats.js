@@ -1,3 +1,50 @@
+
+var competences = ['Deducción', 'Memoria', 'Pensamiento Creativo', 'Atención', 'Coordinación', 'Agilidad Mental', 'Razonamiento lógico matemático', 'Razonamiento Abstracto', 'Resolucion numérica'];
+function skillsStats(skill){
+    var skillAvg = document.getElementById('skillAvg').getContext('2d');
+    new Chart(skillAvg, {
+        type: 'bar',
+        data: {
+            labels: competences,
+            datasets: [{
+                label: 'Competencias',
+                data: skill.split(','),
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 205, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(201, 203, 207, 0.2)',
+                    'rgba(255, 170, 170, 0.2)',
+                    'rgba(48, 82, 82, 0.2)'
+                ],
+                borderColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(255, 159, 64)',
+                    'rgb(255, 205, 86)',
+                    'rgb(75, 192, 192)',
+                    'rgb(54, 162, 235)',
+                    'rgb(153, 102, 255)',
+                    'rgb(201, 203, 207)',
+                    '#EFAAC4',
+                    '#305252'
+                ],
+            }]
+        },
+        options: {
+            plugins: {
+                title: {
+                    text: "Promedio general por competencia.",
+                    display: true,
+                }
+            },
+            maintainAspectRatio: false,
+        }
+    })
+}
+
 var weekDays = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo']
 function Tendencies(scidata, techdata, engdata, artdata, mathdata){
     var gameTendencies = document.getElementById('gameTendencies').getContext('2d');
@@ -49,9 +96,10 @@ function Tendencies(scidata, techdata, engdata, artdata, mathdata){
               },
               title: {
                 display: true,
-                text: 'Tendencias de la semana'
+                text: 'Tendencias por día'
               }
-            }
+            },
+            maintainAspectRatio: false,
         },
     })
 }

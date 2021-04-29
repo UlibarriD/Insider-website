@@ -149,11 +149,16 @@ exports.getPlayers = (req,res) => {
         when DATENAME(WEEKDAY, end_date) = 'Sunday' then 7
         end asc`, {type:Sequelize.QueryTypes.SELECT})
         .then(result => {
-            sequelize.query(`SELECT * FROM player`, {type:Sequelize.QueryTypes.SELECT})
+            sequelize.query(`
+            select ws.skillID as skill, avg(g.score * ws.score) as score
+            from worldSkill ws, game g 
+            where ws.worldId = g.worldId
+            group by ws.skillId, ws.worldId 
+            order by ws.skillId asc`, {type:Sequelize.QueryTypes.SELECT})
             .then(result2 => {
                 res.render('steamdata.html', {
                     tendency: result,
-                    players: result2
+                    skills: result2
                 })
             })
         })

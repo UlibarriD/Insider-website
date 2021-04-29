@@ -58,7 +58,7 @@
                     </div>
                 </div>
                 <div class="data">
-
+                    <canvas id="skillAvg"></canvas>
                 </div>
                 <div class="data">
                     <canvas id="gameTendencies"></canvas>
@@ -70,6 +70,40 @@
         <!-- Chart.js -->
         <script src="https://cdn.jsdelivr.net/npm/chart.js@3.1.1/dist/chart.min.js"></script>
         <script src="../js/steamStats.js"></script>
+
+        <!-- Player competences -->
+        <% var deduccion = "0"; %>
+        <% var memoria = "0"; %>
+        <% var pensamientoCreativo = "0"; %>
+        <% var atencion = "0"; %>
+        <% var coordinacion = "0"; %>
+        <% var agilidadMental = "0"; %>
+        <% var razonamientolm = "0"; %>
+        <% var razonamientoA = "0"; %>
+        <% var resolucionN = "0"; %>
+        <% for(var i = 0; i < skills.length; i++) { %>
+            <% if(skills[i].skill === 1){ %>
+                <% deduccion = skills[i].score %>
+            <% }else if(skills[i].skill === 2) { %>
+                <% memoria = skills[i].score %>
+            <% }else if(skills[i].skill === 3) { %>
+                <% pensamientoCreativo = skills[i].score %>
+            <% }else if(skills[i].skill === 4) { %>
+                <% atencion = skills[i].score %>
+            <% }else if(skills[i].skill === 5) { %>
+                <% coordinacion = skills[i].score %>
+            <% }else if(skills[i].skill === 6) { %>
+                <% agilidadMental = skills[i].score %>
+            <% }else if(skills[i].skill === 7) { %>
+                <% razonamientolm = skills[i].score %>
+            <% }else if(skills[i].skill === 8) { %>
+                <% razonamientoA = skills[i].score %>
+            <% }else if(skills[i].skill === 9) { %>
+                <% resolucionN = skills[i].score %>
+            <% } %>      
+        <% } %>
+        <% var skillValues = [deduccion, memoria, pensamientoCreativo, atencion, coordinacion, agilidadMental, razonamientolm, razonamientoA, resolucionN]; %>
+        <script>skillsStats("<%= skillValues %>")</script>
 
         <!-- Tendencies -->
         <% var scidata = []%>
