@@ -1,5 +1,6 @@
 // Import models and bcrypt
 const Player = require("../util/database").models.player;
+const Game = require("../util/database").models.game;
 const bcrypt = require('bcrypt');
 const passport = require('passport');
 const sequelize = require('../util/database');
@@ -64,10 +65,15 @@ exports.postSignUp = (req, res) => {
                 // hash password
                 bcrypt.genSalt(10,(err,salt) => bcrypt.hash(newPlayer.password,salt, (err,hash)=> {
                     if(err) throw err;
-                        newPlayer.password = hash;
+
+                    newPlayer.password = hash;
                     newPlayer.save()
                     .then((value)=>{
-                        console.log(value)
+                        Game.create({ playerNickname: newPlayer.nickname, worldId: 1, end_date: '01/01/2021', score: 0});
+                        Game.create({ playerNickname: newPlayer.nickname, worldId: 2, end_date: '01/01/2021', score: 0});
+                        Game.create({ playerNickname: newPlayer.nickname, worldId: 3, end_date: '01/01/2021', score: 0});
+                        Game.create({ playerNickname: newPlayer.nickname, worldId: 4, end_date: '01/01/2021', score: 0});
+                        Game.create({ playerNickname: newPlayer.nickname, worldId: 5, end_date: '01/01/2021', score: 0});
                         res.redirect('/insider/iniciarSesion');
                     })
                     .catch(value=> console.log(value));
@@ -156,9 +162,18 @@ exports.getPlayers = (req,res) => {
             group by ws.skillId, ws.worldId 
             order by ws.skillId asc`, {type:Sequelize.QueryTypes.SELECT})
             .then(result2 => {
-                res.render('steamdata.html', {
-                    tendency: result,
-                    skills: result2
+                sequelize.query(`
+                select ws.skillID as skill, sum(g.score * ws.score) as score, p.gender
+                from worldSkill ws, game g, player p, skill s
+                where ws.worldId = g.worldId and p.nickname = g.playerNickname and s.id = ws.skillId
+                group by ws.skillId, ws.worldId, p.gender, s.skill_name
+                order by p.gender, skillId`, {type:Sequelize.QueryTypes.SELECT})
+                .then(result3 => {
+                    res.render('steamdata.html', {
+                        tendency: result,
+                        skills: result2,
+                        genderSkills: result3
+                    })
                 })
             })
         })

@@ -2,6 +2,39 @@ const sequelize = require('./util/database');
 const Game = require("./util/database").models.game;
 sequelize.sync({ force: false })
     .then(result => {
+        // No borrar linea 5 - 35
+        Game.create({ playerNickname: 'Squarish', worldId: 1, end_date: '2021-04-27', score: 0});
+        Game.create({ playerNickname: 'Squarish', worldId: 2, end_date: '2021-04-27', score: 0});
+        Game.create({ playerNickname: 'Squarish', worldId: 3, end_date: '2021-04-27', score: 0});
+        Game.create({ playerNickname: 'Squarish', worldId: 4, end_date: '2021-04-27', score: 0});
+        Game.create({ playerNickname: 'Squarish', worldId: 5, end_date: '2021-04-27', score: 0});
+        Game.create({ playerNickname: 'fazeyouthan', worldId: 1, end_date: '2021-04-27', score: 0});
+        Game.create({ playerNickname: 'fazeyouthan', worldId: 2, end_date: '2021-04-27', score: 0});
+        Game.create({ playerNickname: 'fazeyouthan', worldId: 3, end_date: '2021-04-27', score: 0});
+        Game.create({ playerNickname: 'fazeyouthan', worldId: 4, end_date: '2021-04-27', score: 0});
+        Game.create({ playerNickname: 'fazeyouthan', worldId: 5, end_date: '2021-04-27', score: 0});
+        Game.create({ playerNickname: 'fernanda1a1a', worldId: 1, end_date: '2021-04-27', score: 0});
+        Game.create({ playerNickname: 'fernanda1a1a', worldId: 2, end_date: '2021-04-27', score: 0});
+        Game.create({ playerNickname: 'fernanda1a1a', worldId: 3, end_date: '2021-04-27', score: 0});
+        Game.create({ playerNickname: 'fernanda1a1a', worldId: 4, end_date: '2021-04-27', score: 0});
+        Game.create({ playerNickname: 'fernanda1a1a', worldId: 5, end_date: '2021-04-27', score: 0});
+        Game.create({ playerNickname: 'bloodyemily', worldId: 1, end_date: '2021-04-27', score: 0});
+        Game.create({ playerNickname: 'bloodyemily', worldId: 2, end_date: '2021-04-27', score: 0});
+        Game.create({ playerNickname: 'bloodyemily', worldId: 3, end_date: '2021-04-27', score: 0});
+        Game.create({ playerNickname: 'bloodyemily', worldId: 4, end_date: '2021-04-27', score: 0});
+        Game.create({ playerNickname: 'bloodyemily', worldId: 5, end_date: '2021-04-27', score: 0});
+        Game.create({ playerNickname: 'carlitoustoe', worldId: 1, end_date: '2021-04-27', score: 0});
+        Game.create({ playerNickname: 'carlitoustoe', worldId: 2, end_date: '2021-04-27', score: 0});
+        Game.create({ playerNickname: 'carlitoustoe', worldId: 3, end_date: '2021-04-27', score: 0});
+        Game.create({ playerNickname: 'carlitoustoe', worldId: 4, end_date: '2021-04-27', score: 0});
+        Game.create({ playerNickname: 'carlitoustoe', worldId: 5, end_date: '2021-04-27', score: 0});
+        Game.create({ playerNickname: 'STEAM', worldId: 1, end_date: '2021-04-27', score: 0});
+        Game.create({ playerNickname: 'STEAM', worldId: 1, end_date: '2021-04-27', score: 0});
+        Game.create({ playerNickname: 'STEAM', worldId: 1, end_date: '2021-04-27', score: 0});
+        Game.create({ playerNickname: 'STEAM', worldId: 1, end_date: '2021-04-27', score: 0});
+        Game.create({ playerNickname: 'STEAM', worldId: 1, end_date: '2021-04-27', score: 0});
+
+        // Se puede borrar
         // Science games
         Game.create({ playerNickname: 'Squarish', worldId: 1, end_date: '2021-04-26', score: 3000}); 
         Game.create({ playerNickname: 'Squarish', worldId: 1, end_date: '2021-04-26', score: 2470});
@@ -13,14 +46,6 @@ sequelize.sync({ force: false })
         Game.create({ playerNickname: 'Squarish', worldId: 1, end_date: '2021-04-30', score: 2980});
         Game.create({ playerNickname: 'Squarish', worldId: 1, end_date: '2021-05-01', score: 4910}); 
         Game.create({ playerNickname: 'Squarish', worldId: 1, end_date: '2021-05-02', score: 1220});
-
-        Game.create({ playerNickname: 'bloodyemily', worldId: 1, end_date: '2021-04-26', score: 2100})
-        Game.create({ playerNickname: 'bloodyemily', worldId: 1, end_date: '2021-04-28', score: 1230})
-        Game.create({ playerNickname: 'bloodyemily', worldId: 5, end_date: '2021-04-27', score: 2300})
-
-        Game.create({ playerNickname: 'carlitoustoe', worldId: 2, end_date: '2021-04-27', score: 1180})
-        Game.create({ playerNickname: 'carlitoustoe', worldId: 3, end_date: '2021-04-27', score: 3000})
-        Game.create({ playerNickname: 'carlitoustoe', worldId: 4, end_date: '2021-04-27', score: 2400})
 
         Game.create({ playerNickname: 'Squarish', worldId: 1, end_date: '2021-04-13', score: 3810});
         Game.create({ playerNickname: 'Squarish', worldId: 1, end_date: '2021-04-20', score: 4210});

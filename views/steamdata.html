@@ -11,7 +11,6 @@
 
     </head>
     <body>
-        
         <div class="steam-container">
             <!-- Navigation -->
             <div class="navigation">
@@ -40,6 +39,12 @@
                          </a>
                     </li>
                     <li>
+                        <a href="/insider/datosjugador#genero">
+                            <span class="icon"><i class="fas fa-restroom"></i></span>
+                            <span class="title">Competencias por genero</span>
+                         </a>
+                    </li>
+                    <li>
                         <a href="/insider/cerrarSesion">
                             <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
                             <span class="title">Cerrar Sesión</span>
@@ -63,6 +68,10 @@
                 <div class="data" id="tendencias">
                     <canvas id="gameTendencies"></canvas>
                 </div>
+
+                <div class="data" id="genero">
+                    <canvas id="genderSkills"></canvas>
+                </div>
             </div>
 
         </div>
@@ -72,37 +81,11 @@
         <script src="../js/steamStats.js"></script>
 
         <!-- Player competences -->
-        <% var deduccion = "0"; %>
-        <% var memoria = "0"; %>
-        <% var pensamientoCreativo = "0"; %>
-        <% var atencion = "0"; %>
-        <% var coordinacion = "0"; %>
-        <% var agilidadMental = "0"; %>
-        <% var razonamientolm = "0"; %>
-        <% var razonamientoA = "0"; %>
-        <% var resolucionN = "0"; %>
+        <% var skillValues = []; %>
+
         <% for(var i = 0; i < skills.length; i++) { %>
-            <% if(skills[i].skill === 1){ %>
-                <% deduccion = skills[i].score %>
-            <% }else if(skills[i].skill === 2) { %>
-                <% memoria = skills[i].score %>
-            <% }else if(skills[i].skill === 3) { %>
-                <% pensamientoCreativo = skills[i].score %>
-            <% }else if(skills[i].skill === 4) { %>
-                <% atencion = skills[i].score %>
-            <% }else if(skills[i].skill === 5) { %>
-                <% coordinacion = skills[i].score %>
-            <% }else if(skills[i].skill === 6) { %>
-                <% agilidadMental = skills[i].score %>
-            <% }else if(skills[i].skill === 7) { %>
-                <% razonamientolm = skills[i].score %>
-            <% }else if(skills[i].skill === 8) { %>
-                <% razonamientoA = skills[i].score %>
-            <% }else if(skills[i].skill === 9) { %>
-                <% resolucionN = skills[i].score %>
-            <% } %>      
-        <% } %>
-        <% var skillValues = [deduccion, memoria, pensamientoCreativo, atencion, coordinacion, agilidadMental, razonamientolm, razonamientoA, resolucionN]; %>
+            <% skillValues.push(skills[i].score) %>    
+        <% } %>        
         <script>skillsStats("<%= skillValues %>")</script>
 
         <!-- Tendencies -->
@@ -125,6 +108,19 @@
             <% } %>
         <% } %>
         <script> Tendencies("<%= scidata %>", "<%= techdata %>", "<%= engdata %>", "<%= artdata %>", "<%= mathdata %>") </script>
+
+        <!-- Gender -->
+        <% var skillValuesWomen = []; %>
+        <% var skillValuesMen = []; %>
+
+        <% for(var i = 0; i < genderSkills.length; i++) { %>
+            <% if(genderSkills[i].gender === "M"){ %>
+                <% skillValuesMen.push(genderSkills[i].score) %>    
+            <% } else{ %>
+                <% skillValuesWomen.push(genderSkills[i].score) %>                 
+            <% } %>
+        <% } %>
+        <script> genderS("<%= skillValuesWomen %>","<%= skillValuesMen %>") </script>
 
         <!-- Personal -->
         <script src="../js/steam.js"></script>

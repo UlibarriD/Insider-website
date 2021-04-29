@@ -103,3 +103,61 @@ function Tendencies(scidata, techdata, engdata, artdata, mathdata){
         },
     })
 }
+
+function genderS(skillValuesWomen, skillValuesMen){
+    var genderSkills = document.getElementById('genderSkills').getContext('2d');
+    new Chart(genderSkills, {
+        type: 'radar',
+        data: {
+            labels: competences,
+            datasets: [{
+                label: 'Mujeres',
+                data: skillValuesWomen.split(','),
+                fill: true,
+                backgroundColor: 'rgba(255, 170, 170, 0.4)',
+                borderColor: 'rgba(255, 170, 170)',
+                pointBackgroundColor: 'rgba(255, 170, 170)',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: 'rgba(255, 170, 170)',     
+            },
+            {
+                label: 'Hombres',
+                data: skillValuesMen.split(','),
+                fill: true,
+                backgroundColor: 'rgba(0, 180, 216, 0.2)',
+                borderColor: '#00b4d8',
+                pointBackgroundColor: '#00b4d8',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: '#00b4d8',
+            }]
+        },  
+        options: {
+            elements: {
+                line: {
+                    borderWidth: 3
+                }
+            },
+            plugins: {
+                legend: {
+                  position: 'top',
+                },
+                title: {
+                  display: true,
+                  text: 'Competencias por genero'
+                }
+              },
+            scales: {
+                r: {
+                    angleLines: {
+                        display: false
+                    },
+                    suggestedMin: 10,
+                    suggestedMax: 100
+                }
+            },
+            maintainAspectRatio: false,
+        },
+    })
+}
