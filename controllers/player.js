@@ -134,11 +134,20 @@ exports.getPlayer = (req, res)  =>{
 
 exports.getPlayers = (req,res) => {
     if(req.user.steam === 'on'){
-        sequelize.query(`SELECT area, DATENAME(WEEKDAY, end_date), COUNT(id) as dtendency
+        sequelize.query(`
+        SELECT area, worldId, DATENAME(WEEKDAY, end_date) as date, COUNT(id) as dtendency
         FROM Game, World 
         WHERE id = worldId 
-        GROUP BY area, DATENAME(WEEKDAY, end_date)
-        order by area`, {type:Sequelize.QueryTypes.SELECT})
+        GROUP BY area, DATENAME(WEEKDAY, end_date), worldId
+        order by area, case 
+        when DATENAME(WEEKDAY, end_date) = 'Monday' then 1 
+        when DATENAME(WEEKDAY, end_date) = 'Tuesday' then 2 
+        when DATENAME(WEEKDAY, end_date) = 'Wednesday' then 3 
+        when DATENAME(WEEKDAY, end_date) = 'Thursday' then 4 
+        when DATENAME(WEEKDAY, end_date) = 'Friday' then 5 
+        when DATENAME(WEEKDAY, end_date) = 'Saturday' then 6 
+        when DATENAME(WEEKDAY, end_date) = 'Sunday' then 7
+        end asc`, {type:Sequelize.QueryTypes.SELECT})
         .then(result => {
             res.render('steamdata.html', {
                 tendency: result

@@ -37,6 +37,7 @@ header ul li
 {
     position: relative;
     list-style: none;
+    line-height: 50px;
 }
 header ul li.player-links
 {

@@ -7,35 +7,35 @@ function Tendencies(scidata, techdata, engdata, artdata, mathdata){
             labels: weekDays,
             datasets: [{
                 label: 'Tendencias Ciencia',
-                data: scidata,
+                data: scidata.split(','),
                 fill: false,
                 borderColor: '#39A2AE',
                 tension: 0.1
             },
             {
                 label: 'Tendencias Tecnología',
-                data: techdata,
+                data: techdata.split(','),
                 fill: false,
                 borderColor: '#45B69C',
                 tension: 0.1   
             },
             {
                 label: 'Tendencias Ingeniería',
-                data: engdata,
+                data: engdata.split(','),
                 fill: false,
                 borderColor: '#561F37',
                 tension: 0.1   
             },
             {
                 label: 'Tendencias Arte',
-                data: artdata,
+                data: artdata.split(','),
                 fill: false,
                 borderColor: '#55DBCB',
                 tension: 0.1   
             },
             {
                 label: 'Tendencias Matemáticas',
-                data: mathdata,
+                data: mathdata.split(','),
                 fill: false,
                 borderColor: '#A0A4B8',
                 tension: 0.1   

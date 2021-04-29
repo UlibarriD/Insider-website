@@ -67,13 +67,26 @@
         <!-- Chart.js -->
         <script src="https://cdn.jsdelivr.net/npm/chart.js@3.1.1/dist/chart.min.js"></script>
         <script src="../js/steamStats.js"></script>
-        <script>
-            Tendencies([<%= tendency[1].dtendency %>, <%= tendency[5].dtendency %>, <%= tendency[6].dtendency %>, <%= tendency[4].dtendency %>, <%= tendency[0].dtendency %>, <%= tendency[2].dtendency %>, <%= tendency[3].dtendency %>], 
-            [6, 8, 8, 1, 14, 2, 10], 
-            [5, 1, 1, 20, 12, 16, 18], 
-            [11, 2, 4, 4, 8, 9, 10], 
-            [12, 4, 2, 2, 2, 16, 10])
-        </script>
+        <% var scidata = []%>
+        <% var techdata = []%>
+        <% var engdata = []%>
+        <% var artdata = []%>
+        <% var mathdata = []%>
+        <% for(let i = 0; i < tendency.length; i ++){ %>
+            <% if(tendency[i].worldId === 1){ %>
+                <% scidata.push(tendency[i].dtendency) %>
+            <% }else if(tendency[i].worldId === 2){ %>
+                <% techdata.push(tendency[i].dtendency) %>
+            <% }else if(tendency[i].worldId === 3){ %>
+                <% engdata.push(tendency[i].dtendency) %>
+            <% }else if(tendency[i].worldId === 4){ %>
+                <% artdata.push(tendency[i].dtendency) %>
+            <% }else if(tendency[i].worldId === 5){ %>
+                <% mathdata.push(tendency[i].dtendency) %>
+            <% } %>
+        <% } %>
+
+        <script> Tendencies("<%= scidata %>", "<%= techdata %>", "<%= engdata %>", "<%= artdata %>", "<%= mathdata %>") </script>
 
         <!-- Personal -->
         <script src="../js/steam.js"></script>
