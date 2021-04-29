@@ -6,8 +6,8 @@ sequelize.sync({ force: false })
         Game.create({ playerNickname: 'Squarish', worldId: 1, end_date: '2021-04-26', score: 3000}); 
         Game.create({ playerNickname: 'Squarish', worldId: 1, end_date: '2021-04-26', score: 2470});
         Game.create({ playerNickname: 'Squarish', worldId: 1, end_date: '2021-04-27', score: 2000});
-        Game.create({ playerNickname: 'Squarish', worldId: 1, end_date: '2021-04-28', score: 3800});
-        Game.create({ playerNickname: 'Squarish', worldId: 1, end_date: '2021-04-28', score: 4010});
+        Game.create({ playerNickname: 'Squarish', worldId: 1, end_date: '2021-04-27', score: 3800});
+        Game.create({ playerNickname: 'Squarish', worldId: 1, end_date: '2021-04-27', score: 4010});
         Game.create({ playerNickname: 'Squarish', worldId: 1, end_date: '2021-04-28', score: 2570});
         Game.create({ playerNickname: 'Squarish', worldId: 1, end_date: '2021-04-29', score: 3485});
         Game.create({ playerNickname: 'Squarish', worldId: 1, end_date: '2021-04-30', score: 2980});
@@ -28,12 +28,12 @@ sequelize.sync({ force: false })
         Game.create({ playerNickname: 'Squarish', worldId: 1, end_date: '2021-04-15', score: 3222});
         // Technology game
         Game.create({ playerNickname: 'Squarish', worldId: 2, end_date: '2021-04-26', score: 6750});
-        Game.create({ playerNickname: 'Squarish', worldId: 2, end_date: '2021-04-26', score: 8813});
+        Game.create({ playerNickname: 'Squarish', worldId: 2, end_date: '2021-04-30', score: 8813});
         Game.create({ playerNickname: 'Squarish', worldId: 2, end_date: '2021-04-27', score: 4689});
         Game.create({ playerNickname: 'Squarish', worldId: 2, end_date: '2021-04-28', score: 5592});
-        Game.create({ playerNickname: 'Squarish', worldId: 2, end_date: '2021-04-28', score: 3678});
-        Game.create({ playerNickname: 'Squarish', worldId: 2, end_date: '2021-04-28', score: 5614});
-        Game.create({ playerNickname: 'Squarish', worldId: 2, end_date: '2021-04-29', score: 2583});
+        Game.create({ playerNickname: 'Squarish', worldId: 2, end_date: '2021-04-30', score: 3678});
+        Game.create({ playerNickname: 'Squarish', worldId: 2, end_date: '2021-04-01', score: 5614});
+        Game.create({ playerNickname: 'Squarish', worldId: 2, end_date: '2021-04-30', score: 2583});
         Game.create({ playerNickname: 'Squarish', worldId: 2, end_date: '2021-04-30', score: 3239});
         Game.create({ playerNickname: 'Squarish', worldId: 2, end_date: '2021-05-01', score: 5207});
         Game.create({ playerNickname: 'Squarish', worldId: 2, end_date: '2021-05-02', score: 3403});
@@ -59,16 +59,23 @@ sequelize.sync({ force: false })
         Game.create({ playerNickname: 'Squarish', worldId: 4, end_date: '2021-04-30', score: 4899});
         Game.create({ playerNickname: 'Squarish', worldId: 4, end_date: '2021-05-01', score: 3332});
         Game.create({ playerNickname: 'Squarish', worldId: 4, end_date: '2021-05-02', score: 4548});
+        Game.create({ playerNickname: 'Squarish', worldId: 4, end_date: '2021-05-02', score: 3100});
+        Game.create({ playerNickname: 'Squarish', worldId: 4, end_date: '2021-05-02', score: 2200});
+        Game.create({ playerNickname: 'Squarish', worldId: 4, end_date: '2021-05-02', score: 1000});
         // Math game
         Game.create({ playerNickname: 'Squarish', worldId: 5, end_date: '2021-04-26', score: 5052});
         Game.create({ playerNickname: 'Squarish', worldId: 5, end_date: '2021-04-26', score: 3034});
         Game.create({ playerNickname: 'Squarish', worldId: 5, end_date: '2021-04-27', score: 3969});
+        Game.create({ playerNickname: 'Squarish', worldId: 5, end_date: '2021-04-27', score: 2100});
+        Game.create({ playerNickname: 'Squarish', worldId: 5, end_date: '2021-04-27', score: 3120});
         Game.create({ playerNickname: 'Squarish', worldId: 5, end_date: '2021-04-28', score: 5028});
         Game.create({ playerNickname: 'Squarish', worldId: 5, end_date: '2021-04-28', score: 2994});
         Game.create({ playerNickname: 'Squarish', worldId: 5, end_date: '2021-04-28', score: 3939});
         Game.create({ playerNickname: 'Squarish', worldId: 5, end_date: '2021-04-29', score: 5450});
         Game.create({ playerNickname: 'Squarish', worldId: 5, end_date: '2021-04-30', score: 3777});
         Game.create({ playerNickname: 'Squarish', worldId: 5, end_date: '2021-05-01', score: 3554});
+        Game.create({ playerNickname: 'Squarish', worldId: 5, end_date: '2021-05-01', score: 1001});
+        Game.create({ playerNickname: 'Squarish', worldId: 5, end_date: '2021-05-01', score: 2020});
         Game.create({ playerNickname: 'Squarish', worldId: 5, end_date: '2021-05-02', score: 5679});
         // Fernanda 
         // Science games
@@ -107,11 +114,14 @@ sequelize.sync({ force: false })
         // Art game
         Game.create({ playerNickname: 'fernanda1a1a', worldId: 4, end_date: '2021-04-26', score: 2386});
         Game.create({ playerNickname: 'fernanda1a1a', worldId: 4, end_date: '2021-04-26', score: 3586});
+        Game.create({ playerNickname: 'fernanda1a1a', worldId: 4, end_date: '2021-04-27', score: 2222});
         Game.create({ playerNickname: 'fernanda1a1a', worldId: 4, end_date: '2021-04-27', score: 4789});
         Game.create({ playerNickname: 'fernanda1a1a', worldId: 4, end_date: '2021-04-28', score: 2585});
         Game.create({ playerNickname: 'fernanda1a1a', worldId: 4, end_date: '2021-04-28', score: 5984});
         Game.create({ playerNickname: 'fernanda1a1a', worldId: 4, end_date: '2021-04-28', score: 1876});
         Game.create({ playerNickname: 'fernanda1a1a', worldId: 4, end_date: '2021-04-29', score: 5615});
+        Game.create({ playerNickname: 'fernanda1a1a', worldId: 4, end_date: '2021-04-29', score: 1099});
+        Game.create({ playerNickname: 'fernanda1a1a', worldId: 4, end_date: '2021-04-29', score: 890});
         Game.create({ playerNickname: 'fernanda1a1a', worldId: 4, end_date: '2021-04-30', score: 4377});
         Game.create({ playerNickname: 'fernanda1a1a', worldId: 4, end_date: '2021-05-01', score: 4189});
         Game.create({ playerNickname: 'fernanda1a1a', worldId: 4, end_date: '2021-05-02', score: 2273});
