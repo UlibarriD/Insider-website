@@ -58,6 +58,9 @@
                     </div>
                 </div>
                 <div class="data">
+
+                </div>
+                <div class="data">
                     <canvas id="gameTendencies"></canvas>
                 </div>
             </div>
@@ -67,6 +70,8 @@
         <!-- Chart.js -->
         <script src="https://cdn.jsdelivr.net/npm/chart.js@3.1.1/dist/chart.min.js"></script>
         <script src="../js/steamStats.js"></script>
+
+        <!-- Tendencies -->
         <% var scidata = []%>
         <% var techdata = []%>
         <% var engdata = []%>
@@ -85,7 +90,6 @@
                 <% mathdata.push(tendency[i].dtendency) %>
             <% } %>
         <% } %>
-
         <script> Tendencies("<%= scidata %>", "<%= techdata %>", "<%= engdata %>", "<%= artdata %>", "<%= mathdata %>") </script>
 
         <!-- Personal -->

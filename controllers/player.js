@@ -149,8 +149,12 @@ exports.getPlayers = (req,res) => {
         when DATENAME(WEEKDAY, end_date) = 'Sunday' then 7
         end asc`, {type:Sequelize.QueryTypes.SELECT})
         .then(result => {
-            res.render('steamdata.html', {
-                tendency: result
+            sequelize.query(`SELECT * FROM player`, {type:Sequelize.QueryTypes.SELECT})
+            .then(result2 => {
+                res.render('steamdata.html', {
+                    tendency: result,
+                    players: result2
+                })
             })
         })
     } else {
