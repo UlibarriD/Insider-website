@@ -4,7 +4,7 @@
     position: relative;
     width: 100%;
     min-height: 70vh;
-    background: #E63946;
+    background-color:  #7e002f;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,7 +35,7 @@
     position: relative;
     width: 100%;
     min-height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("https://images.unsplash.com/photo-1494319921810-2fab6cce50a5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80");
+    background-color:  #7e002f;
     background-size: cover;
     background-position: center;
     display: flex;
