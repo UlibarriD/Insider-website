@@ -112,11 +112,10 @@
 }
 .steam-container .main .data
 {
-    margin-top: 40px;
     margin: 32px;
     padding: 16px;
     background: #fff;
-    min-height: 53vh;
+    min-height: 80vh;
 }
 
 .toggle-steam
@@ -143,6 +142,17 @@
 }
 
 /* Breakout responsive */
+@media screen and (max-width: 1300px) 
+{
+    .steam-container .main .data
+    {
+        min-height: 53vh;
+    }
+    #skillAvg, #gameTendencies
+    {
+        height: 398px;
+    }
+}
 @media screen and (max-width: 990px) 
 {
     .navigation
@@ -167,6 +177,10 @@
 }
 @media screen and (max-width: 758px) 
 {
+    .steam-container .main .data
+    {
+        margin: 16px;
+    }
     .navigation
     {
         width: 100%;
@@ -189,14 +203,5 @@
     {
         width: 100%;
         left: 0;
-    }
-    .steam-container .main .data
-    {
-        margin: 16px;
-        height: 50vh;
-    }
-    .steam-container .main .data canvas
-    {
-        height: 441px;
     }
 }

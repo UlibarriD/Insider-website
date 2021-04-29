@@ -66,6 +66,7 @@ function science(scienceData, wd){
                     suggestedMax: 100
                 }
             },
+            maintainAspectRatio: false,
         },
     })
 }
@@ -96,6 +97,7 @@ function tech(techData, wd){
                     suggestedMax: 100
                 }
             },
+            maintainAspectRatio: false,
         },
     })
 }
@@ -126,6 +128,7 @@ function eng(engData, wd){
                     suggestedMax: 100
                 }
             },
+            maintainAspectRatio: false,
         },
     })
 }
@@ -156,6 +159,7 @@ function art(artData, wd){
                     suggestedMax: 100
                 }
             },
+            maintainAspectRatio: false,
         },
     })
 }
@@ -186,6 +190,7 @@ function math(mathData, wd){
                     suggestedMax: 100
                 }
             },
+            maintainAspectRatio: false,
         },
     })
 }

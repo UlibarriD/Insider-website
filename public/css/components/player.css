@@ -64,9 +64,7 @@
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     padding: 16px;
     margin-bottom: 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    min-height: 650px;
 }
 
 
@@ -76,8 +74,38 @@
 }
 
 /* Breakout responsive */
+@media screen and (max-width: 1300px) 
+{
+    .player .history .score
+    {
+        min-height: 600px;
+    }
+    #scienceScores, #techScore, #engScore, #artScore, #mathScore
+    {
+        height: 568px;
+    }
+}
+@media screen and (max-width: 1300px) 
+{
+    .player .history .score
+    {
+        min-height: 500px;
+    }
+    #scienceScores, #techScore, #engScore, #artScore, #mathScore
+    {
+        height: 468px;
+    }
+}
 @media screen and (max-width: 600px) 
 {
+    .player .history .score
+    {
+        min-height: 350px;
+    }
+    #scienceScores, #techScore, #engScore, #artScore, #mathScore
+    {
+        height: 318px;
+    }
     .player .config
     {
         width: 341px;
