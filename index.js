@@ -45,6 +45,10 @@ app.get('/insider/download', (req, res) => {
     res.download(path.join(__dirname, 'public', 'resources', 'test.txt'));
 });
 
+app.get('/', (req, res) => {
+    res.redirect('/insider');
+})
+
 // Attend requests
 sequelize.sync()
     .then(result => {

@@ -22,4 +22,3 @@ function moveLeft(){
     document.getElementsByClassName('cards')[last].style.display = 'none';
 }
 
-
