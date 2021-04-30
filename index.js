@@ -41,8 +41,16 @@ app.get('/insider', (req, res) => {
 app.get('/insider/tutoriales', (req, res) => {
     res.render('tutorials.html')
 });
+app.get('/insider/download/windows', (req, res) => {
+    res.download(path.join(__dirname, 'public', 'resources', 'windows.txt'))
+})
+app.get('/insider/download/mac', (req, res) => {
+    res.download(path.join(__dirname, 'public', 'resources', 'mac.txt'))
+})
+
+
 app.get('/insider/download', (req, res) => {
-    res.download(path.join(__dirname, 'public', 'resources', 'test.txt'));
+    res.render('downloads.html')
 });
 
 app.get('/', (req, res) => {

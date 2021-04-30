@@ -127,7 +127,6 @@
 
 .toggle-steam
 {
-
     width: 60px;
     height: 60px;
     cursor: pointer;
@@ -184,6 +183,10 @@
 }
 @media screen and (max-width: 758px) 
 {
+    .steam-container .main .data.dfirst
+    {
+        margin-top: 16px;
+    }
     .steam-container .main .data
     {
         margin: 16px;
@@ -198,6 +201,10 @@
     {
         width: 100%;
         left: 0;
+    }
+    .main .topbar
+    {
+        position: relative;
     }
     .toggle-steam.active
     {
