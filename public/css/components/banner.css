@@ -193,6 +193,10 @@
 
 @media screen and (max-width: 1350px)
 {
+    .banner
+    {
+        justify-content: space-evenly;
+    }
     #move-left
     {
         display: block;

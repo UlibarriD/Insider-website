@@ -6,8 +6,8 @@ function moveRight(){
     if (counter == 3)
         counter = 0;
 
-    document.getElementsByClassName('cards')[counter].style.display = 'flex';
-    document.getElementsByClassName('cards')[last].style.display = 'none';
+    document.getElementsByClassName('cardss')[counter].style.display = 'flex';
+    document.getElementsByClassName('cardss')[last].style.display = 'none';
 }
 
 function moveLeft(){
@@ -18,7 +18,7 @@ function moveLeft(){
         counter = 2;
     }
     
-    document.getElementsByClassName('cards')[counter].style.display = 'flex';
-    document.getElementsByClassName('cards')[last].style.display = 'none';
+    document.getElementsByClassName('cardss')[counter].style.display = 'flex';
+    document.getElementsByClassName('cardss')[last].style.display = 'none';
 }
 
