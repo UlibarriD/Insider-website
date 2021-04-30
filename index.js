@@ -42,7 +42,7 @@ app.get('/insider/tutoriales', (req, res) => {
     res.render('tutorials.html')
 });
 app.get('/insider/download/windows', (req, res) => {
-    res.download(path.join(__dirname, 'public', 'resources', 'windows.txt'))
+    res.download(path.join(__dirname, 'public', 'resources', 'insiderwindows.zip'))
 })
 app.get('/insider/download/mac', (req, res) => {
     res.download(path.join(__dirname, 'public', 'resources', 'mac.txt'))
